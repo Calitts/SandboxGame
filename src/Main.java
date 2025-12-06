@@ -1,8 +1,10 @@
+package src;
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.SwingUtilities;
 import java.awt.Dimension;
 
+// Classe Principal. Onde o jogo será renderizado.
 class Main implements Runnable {
     public void run() {
         JFrame frame = new JFrame("Sandbox Game");
