@@ -1,3 +1,14 @@
+error id: file:///C:/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java:java/awt/Frame#isResizable().
+file:///C:/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java
+empty definition using pc, found symbol in pc: java/awt/Frame#isResizable().
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 940
+uri: file:///C:/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java
+text:
+```scala
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.SwingUtilities;
@@ -25,18 +36,16 @@ class Main extends JFrame implements Runnable {
         // t.start();
         JFrame frame = new JFrame("Sandbox Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // frame.setBackground(new Color(255, 0, 0));
-        // frame.setPreferredSize(new Dimension(800, 600));
-        frame.setResizable(false);
-        
+        frame.setBackground(new Color(255, 0, 0));
+        frame.setPreferredSize(new Dimension(800, 600));
+        frame.setLocationRelativeTo(null);
+        frame.i@@sResizable();
+
         panel = new GamePanel();
         frame.add(panel);
-        
+    
         frame.pack();
         frame.setVisible(true);
-        
-        frame.setLocationRelativeTo(null);
-        panel.startGameThread();
     }
     
     public void paint(Graphics g) {
@@ -50,3 +59,9 @@ class Main extends JFrame implements Runnable {
         SwingUtilities.invokeLater(new Main());
     }
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/awt/Frame#isResizable().

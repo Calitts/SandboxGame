@@ -1,0 +1,333 @@
+2026.01.09 01:01:19 INFO  Started: Metals version 1.6.4 in folders '/mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame' for client Visual Studio Code 1.107.1.[0m
+2026.01.09 01:01:21 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.09 01:01:21 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:22 WARN  no build tool detected in workspace '/mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2026.01.09 01:01:22 WARN  Build server is not auto-connectable.[0m
+2026.01.09 01:01:22 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:01:24 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+Jan 09, 2026 1:01:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2026.01.09 01:01:24 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:24 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:24 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:24 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+Jan 09, 2026 1:01:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+Jan 09, 2026 1:01:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+Jan 09, 2026 1:01:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11
+2026.01.09 01:01:25 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:27 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:27 INFO  time: code lens generation in 3.15s[0m
+2026.01.09 01:01:28 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:29 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:31 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:42 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:42 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:01:42 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:42 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:43 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:43 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:43 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:44 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:44 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:01:44 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:46 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:46 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:01:46 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:51 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:51 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:01:55 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:08 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:02:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:09 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:09 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:09 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:10 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:02:10 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:02:09 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:03:30 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+Jan 09, 2026 1:03:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.01.09 01:04:41 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:04:41 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:04:41 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:04:41 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:04:41 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:05:22 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 01:05:22 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:05:22 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:05:22 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:05:22 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:19:17 INFO  Shutting down server[0m
+2026.01.09 01:19:17 INFO  shutting down Metals[0m
+2026.01.09 01:19:17 INFO  Exiting server[0m
+2026.01.09 01:19:52 INFO  Started: Metals version 1.6.4 in folders '/mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame' for client Visual Studio Code 1.107.1.[0m
+2026.01.09 01:19:56 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.09 01:19:56 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:19:57 WARN  no build tool detected in workspace '/mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2026.01.09 01:19:57 WARN  Build server is not auto-connectable.[0m
+2026.01.09 01:19:57 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+Jan 09, 2026 1:19:59 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2026.01.09 01:19:59 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:19:59 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:19:59 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:20:01 INFO  time: code lens generation in 1.97s[0m
+2026.01.09 01:20:01 INFO  time: code lens generation in 1.18s[0m
+2026.01.09 01:20:09 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:20:09 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+Jan 09, 2026 1:20:09 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12
+Jan 09, 2026 1:20:17 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jan 09, 2026 1:20:29 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jan 09, 2026 1:20:38 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.01.09 01:21:35 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:21:37 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 01:25:51 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+Jan 09, 2026 1:46:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.01.09 16:44:39 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:39 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:40 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:42 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:43 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:49 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:49 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 16:44:49 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:49 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:50 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+Jan 09, 2026 4:44:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 36
+2026.01.09 16:44:50 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:50 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:50 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:51 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:44:51 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 16:44:51 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:01 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 16:45:01 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:01 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:01 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:03 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:08 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:10 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:44 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 16:45:44 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:45:45 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:46:22 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:55:34 INFO  Shutting down server[0m
+2026.01.09 16:55:34 INFO  shutting down Metals[0m
+2026.01.09 16:55:34 INFO  Exiting server[0m
+2026.01.09 16:56:39 INFO  Started: Metals version 1.6.4 in folders '/mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame' for client Visual Studio Code 1.107.1.[0m
+2026.01.09 16:56:42 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.09 16:56:43 WARN  no build tool detected in workspace '/mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2026.01.09 16:56:43 WARN  Build server is not auto-connectable.[0m
+2026.01.09 16:56:43 WARN  no build target for: /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java[0m
+2026.01.09 16:56:43 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:56:46 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:56:47 INFO  time: code lens generation in 3.26s[0m
+2026.01.09 16:56:51 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:57:23 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:57:23 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:57:25 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:57:25 INFO  no build target found for /mnt/5C48F8BE48F8984A/Users/cauap/OneDrive/Documentos/Programs/Code/Java/SandboxGame/src/Main.java. Using fallback presentation compiler.[0m
+2026.01.09 16:59:01 INFO  Shutting down server[0m
+2026.01.09 16:59:01 INFO  shutting down Metals[0m
+2026.01.09 16:59:01 INFO  Exiting server[0m
+2026.01.11 13:29:34 INFO  Started: Metals version 1.6.4 in folders 'C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame' for client Visual Studio Code 1.108.0.
+2026.01.11 13:29:36 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.01.11 13:29:36 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+jan. 11, 2026 1:29:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2026.01.11 13:29:38 WARN  no build tool detected in workspace 'C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.01.11 13:29:38 WARN  Build server is not auto-connectable.
+2026.01.11 13:29:38 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 16:59:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 16:59:47 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+jan. 11, 2026 4:59:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6
+2026.01.11 16:59:47 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 16:59:47 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 16:59:47 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:40:52 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:01 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:41:01 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:10 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java
+2026.01.11 21:41:10 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java:42: error: unmappable character (0x81) for encoding windows-1252
+        super("Ã?gua", 0x0000FF, 5, true, false, false);
+                ^
+C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java:167: error: unmappable character (0x81) for encoding windows-1252
+        // Fogo + Ã?gua â†’ Vapor + Ar
+                   ^
+C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java:173: error: unmappable character (0x81) for encoding windows-1252
+        // Ã?gua + Areia â†’ Lama
+            ^
+C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java:179: error: unmappable character (0x81) for encoding windows-1252
+        // Lava + Ã?gua â†’ Pedra + Vapor
+                   ^
+2026.01.11 21:41:12 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:13 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:22 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:22 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:24 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:27 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:27 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:41:27 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:27 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:31 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:31 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:32 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:41:32 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:39 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java
+2026.01.11 21:41:39 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:39 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:39 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:40 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:39 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:39 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:43 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:43 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:48 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:48 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:48 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:41:55 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:55 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:41:55 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:41:57 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:42:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:42:26 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:42:26 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:42:28 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:42:28 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+jan. 11, 2026 9:42:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.01.11 21:42:44 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:42:53 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Element.java. Using fallback presentation compiler.
+2026.01.11 21:43:00 INFO  Shutting down server
+2026.01.11 21:43:00 INFO  shutting down Metals
+2026.01.11 21:43:00 INFO  Exiting server
+2026.01.11 21:43:56 INFO  Started: Metals version 1.6.4 in folders 'C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame' for client Visual Studio Code 1.108.0.
+2026.01.11 21:43:58 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.01.11 21:43:58 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:43:59 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:00 WARN  no build tool detected in workspace 'C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.01.11 21:43:59 WARN  Build server is not auto-connectable.
+2026.01.11 21:44:00 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:44:00 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:02 INFO  time: code lens generation in 1.88s
+2026.01.11 21:44:10 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+jan. 11, 2026 9:44:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15
+jan. 11, 2026 9:44:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16
+jan. 11, 2026 9:44:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17
+2026.01.11 21:44:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:25 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:26 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:27 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:44:27 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:47:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:47:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:47:46 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:47:50 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:00 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:48:00 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:01 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:05 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:06 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:07 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:07 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:18 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java
+2026.01.11 21:48:18 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:48:18 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:48:18 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:48:19 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:48:18 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:48:20 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Pixel.java. Using fallback presentation compiler.
+2026.01.11 21:48:20 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:48:20 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:20 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:20 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:20 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:34 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:48:34 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:34 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:34 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:34 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:42 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:48:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:47 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:48 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:50 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:51 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:48:56 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:49:40 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.11 21:49:40 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:49:40 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:49:40 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:49:40 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:49:41 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:13 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:13 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:13 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:13 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:23 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:25 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:26 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:32 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:32 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:35 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:35 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:50:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:51:04 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:51:04 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:51:42 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:52:40 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:52:44 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:52:45 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:52:47 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.11 21:53:11 INFO  Shutting down server
+2026.01.11 21:53:11 INFO  shutting down Metals
+2026.01.11 21:53:11 INFO  Exiting server
+2026.01.12 15:03:10 INFO  Started: Metals version 1.6.4 in folders 'C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame' for client Visual Studio Code 1.108.0.
+2026.01.12 15:03:13 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.01.12 15:03:15 WARN  no build tool detected in workspace 'C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.01.12 15:03:15 WARN  Build server is not auto-connectable.
+2026.01.12 15:03:15 WARN  no build target for: C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java
+2026.01.12 15:03:15 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:19 INFO  time: code lens generation in 4.03s
+2026.01.12 15:03:20 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:24 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:25 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:25 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:25 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:25 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:03:49 INFO  no build target found for C:\Users\cauap\OneDrive\Documentos\Programs\Code\Java\SandboxGame\src\Main.java. Using fallback presentation compiler.
+2026.01.12 15:04:25 INFO  Shutting down server
+2026.01.12 15:04:25 INFO  shutting down Metals
+2026.01.12 15:04:25 INFO  Exiting server
