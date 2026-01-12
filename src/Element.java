@@ -34,31 +34,7 @@ abstract class Elemento {
     }
 }
 
-//SUBCLASSE DOS ANIMALES
- abstract class SerVivo extends Elemento {
 
-    public int vida;          // 0 = morto
-    public int velocidade;    // quanto mais rápido, mais se move
-    public boolean comeSolidos;
-    public boolean bebeLiquidos;
-
-    public SerVivo(String nome, int cor, int peso, boolean solido,
-                   boolean liquido, boolean gasoso, boolean inflamavel,
-                   int vida, int velocidade,
-                   boolean comeSolidos, boolean bebeLiquidos) {
-
-        super(nome, cor, peso, solido, liquido, gasoso, inflamavel);
-        this.vida = vida;
-        this.velocidade = velocidade;
-        this.comeSolidos = comeSolidos;
-        this.bebeLiquidos = bebeLiquidos;
-    }
-
-    // Verifica se o bicho está vivo
-    public boolean estaVivo() {
-        return vida > 0;
-    }
-}
 
 //ELEMENTOS
    
@@ -144,26 +120,49 @@ class Cinzas extends Elemento {
     public Cinzas() {
         super("Cinzas", 0xAAAAAA, 2, true, false, false, false);
     }
+}
   // Líquido inflamável
 class Oleo extends Elemento {
     public Oleo() { super("Óleo", 0xFFD700, 5, false,  true, false, true); }
 }
+
 
 // Elemento elétrico
 class Eletricidade extends Elemento {
     public Eletricidade() { super("Eletricidade", 0xFFFFAA, 0, false, false, true, false); }
 }
 
+
 // Elemento congelado
 class Neve extends Elemento {
     public Neve() { super("Neve", 0xFFFFFF, 2, true, false, false, false); }
 }
+
 
 // Metal sólido pesado
 class Metal extends Elemento {
     public Metal() { super("Metal", 0x808080, 10, true, false, false, false); }
 }
 
+// Líquido  que derrete
+class Acido extends Elemento {
+    public Acido() {
+        super("Ácido", 0x00FF00, 4, false, true, false, false);
+    }
+}
+
+// Líquido instiga fogo
+class Alcool extends Elemento {
+    public Alcool() {
+        super("Álcool", 0xC0C0C0, 3, false, true, false, true);
+    }
+}
+// solido
+class Sal extends Elemento {
+    public Sal() {
+        super("Sal", 0xFF9999, 6, true, false, false, false);
+    }
+}
 
 
    //LOGICA DE REAÇÕES
