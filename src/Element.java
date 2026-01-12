@@ -163,6 +163,16 @@ class Sal extends Elemento {
         super("Sal", 0xFF9999, 6, true, false, false, false);
     }
 }
+// Líquido salgado
+class AguaSalgada extends Elemento {
+    public AguaSalgada() {
+        super("ÁguaSalgada", 0x00FFFF, 5, false, true, false, false);
+    }
+}
+// Metal liquido
+class MetalDerretido extends Elemento {
+    public MetalDerretido() { super("MetalDerretido", 0x606060, 10, false, true, false, false); }
+}
 
 
    //LOGICA DE REAÇÕES
@@ -265,6 +275,34 @@ class GerenciadorReacoes {
     reacoes.add(new Reacao(
             Fogo.class, Neve.class,
             new Agua(), new Vapor()
+    ));
+
+      // Fogo + Metal → MetalDerretido + Fumaca
+        reacoes.add(new Reacao(
+                Fogo.class, Metal.class,
+                new MetalDerretido(), new Fumaca()
+        ));
+      
+       // Ácido + Metal → MetalDerretido + sal
+        reacoes.add(new Reacao(
+                Acido.class, Metal.class,
+                new MetalDerretido(), new Sal()
+      ));
+
+        // Fogo + Álcool → Propagacao
+    reacoes.add(new Reacao(
+            Fogo.class, Alcool.class,
+            new Fogo(), new Fogo()
+    ));
+        // Agua + Sal → Agua salgada
+    reacoes.add(new Reacao(
+            Agua.class, Sal.class,
+            new AguaSalgada(), new AguaSalgada()
+    ));
+        // Neve + Acido → Agua + Ar
+    reacoes.add(new Reacao(
+            Neve.class, Acido.class,
+            new Agua(), new Ar()
     ));
     }
 
