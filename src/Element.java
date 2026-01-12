@@ -34,10 +34,34 @@ abstract class Elemento {
     }
 }
 
+//SUBCLASSE DOS ANIMALES
+ abstract class SerVivo extends Elemento {
 
-   //ELEMENTOS
+    public int vida;          // 0 = morto
+    public int velocidade;    // quanto mais rápido, mais se move
+    public boolean comeSolidos;
+    public boolean bebeLiquidos;
+
+    public SerVivo(String nome, int cor, int peso, boolean solido,
+                   boolean liquido, boolean gasoso, boolean inflamavel,
+                   int vida, int velocidade,
+                   boolean comeSolidos, boolean bebeLiquidos) {
+
+        super(nome, cor, peso, solido, liquido, gasoso, inflamavel);
+        this.vida = vida;
+        this.velocidade = velocidade;
+        this.comeSolidos = comeSolidos;
+        this.bebeLiquidos = bebeLiquidos;
+    }
+
+    // Verifica se o bicho está vivo
+    public boolean estaVivo() {
+        return vida > 0;
+    }
+}
+
+//ELEMENTOS
    
-
 // Líquido  que apaga fogo
 class Agua extends Elemento {
     public Agua() {
