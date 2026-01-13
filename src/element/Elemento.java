@@ -3,7 +3,7 @@ package element;
 
 // ELEMENTO BASE
 
-abstract class Elemento {
+public abstract class Elemento {
 
     public String nome;
     public int cor;

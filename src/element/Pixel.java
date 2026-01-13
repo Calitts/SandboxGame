@@ -2,7 +2,6 @@ package element;
 
 import java.awt.Color;
 
-
 // Classe onde os pixels terão seus comportamentos classificados
 
 public class Pixel {
@@ -25,7 +24,13 @@ public class Pixel {
     }
 
     public int getGravity() {
-        return this.type.peso;
+        int res = this.type.peso;
+        // try {
+        //     res = 10 / this.type.peso;
+        // } catch (ArithmeticException e) {
+        //     res = 0;
+        // }
+        return res;
     }
 
     public Elemento getType() {
