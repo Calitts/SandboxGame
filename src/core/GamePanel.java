@@ -1,15 +1,26 @@
 package core;
 
+import element.*;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Color;
-import java.lang.Thread;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 
-import element.*;
 
 class GamePanel extends JPanel implements Runnable {
+
+    // Resolução base 16:9
+    private final int BASE_WIDTH = 1280;
+    private final int BASE_HEIGHT = 720;
+    private PauseMenu pauseMenu;
+    
+
 
     protected int originalTileSize = 1;
     protected int scale = 6;
@@ -19,6 +30,8 @@ class GamePanel extends JPanel implements Runnable {
     protected int row = 10 * (10 / originalTileSize);
     protected int width = tileSize * col;
     protected int height = tileSize * row;
+    protected boolean paused = false;
+
 
     protected int menuHeight = 200;
 
@@ -32,12 +45,28 @@ class GamePanel extends JPanel implements Runnable {
         this.addMouseListener(input);
         this.addMouseMotionListener(input);
         this.setFocusable(true);
+
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW)
+            .put(KeyStroke.getKeyStroke("ESCAPE"), "pause");
+
+        this.getActionMap().put("pause", new AbstractAction() {
+        @Override
+         public void actionPerformed(ActionEvent e) {
+        togglePauseMenu();
+        }   
+    });
+
     }
 
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
     }
+
+    public void setPauseMenu(PauseMenu menu) {
+    this.pauseMenu = menu;
+    }
+
 
     public void menuPage() {
 
@@ -86,10 +115,13 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        ticks++;
-        handleInput();
-        handlePhysics();
+    if (paused) return;
+
+    ticks++;
+    handleInput();
+    handlePhysics();
     }
+
 
     public void handleInput() {
         int x = input.getPosition().intX();
@@ -157,15 +189,35 @@ class GamePanel extends JPanel implements Runnable {
         // g2.fillRect(0, 0, width, height);
 
         // Game Rendering
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                Pixel pixel = screen[x][y];
-                g2.setColor(pixel.getColor());
-                g2.fillRect(x * tileSize, y * tileSize, originalTileSize * scale, originalTileSize * scale);
+     double scaleX = getWidth() / (double) BASE_WIDTH;
+    double scaleY = getHeight() / (double) BASE_HEIGHT;
+    double scaleFactor = Math.min(scaleX, scaleY);
+
+    int renderWidth = (int) (BASE_WIDTH * scaleFactor);
+    int renderHeight = (int) (BASE_HEIGHT * scaleFactor);
+
+    int offsetX = (getWidth() - renderWidth) / 2;
+    int offsetY = (getHeight() - renderHeight) / 2;
+
+    // fundo preto (barras laterais)
+    g2.setColor(Color.BLACK);
+    g2.fillRect(0, 0, getWidth(), getHeight());
+
+    // desenha o jogo centralizado
+    for (int x = 0; x < col; x++) {
+        for (int y = 0; y < row; y++) {
+            Pixel pixel = screen[x][y];
+            g2.setColor(pixel.getColor());
+
+            int drawX = offsetX + (int) (x * tileSize * scaleFactor);
+            int drawY = offsetY + (int) (y * tileSize * scaleFactor);
+            int drawSize = (int) (tileSize * scaleFactor);
+
+            g2.fillRect(drawX, drawY, drawSize, drawSize);
             }
         }
 
-        g2.dispose();
+         g2.dispose();
     }
 
     public void printStats() {
@@ -174,6 +226,16 @@ class GamePanel extends JPanel implements Runnable {
             ticks = 0;
             FPS = 0;
             nextStat = System.nanoTime() + (long) 10e9;
+        }
+    }
+
+    private void togglePauseMenu() {
+    paused = !paused;
+
+        Container parent = getParent();
+        if (parent.getLayout() instanceof CardLayout) {
+            CardLayout cl = (CardLayout) parent.getLayout();
+            cl.show(parent, paused ? "PAUSE" : "GAME");
         }
     }
 

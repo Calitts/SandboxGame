@@ -1,37 +1,41 @@
 //Menu Inicial
 package core;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import javax.swing.*;
 
-public class StartMenu extends JDialog{
+public class StartMenu extends JPanel{
 
-    public StartMenu(JFrame parent, GamePanel panel){
+    public StartMenu(CardLayout layout, JPanel container){
 
-        super(parent, "SandBox Game", true);
-        setLayout(new BorderLayout());
+        setLayout(new GridBagLayout());
+        setBackground(new Color(0, 0, 0, 200));
+        setOpaque(true);
 
-        JLabel title = new JLabel("Sandbox Game", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", Font.BOLD, 26));
-        add(title, BorderLayout.NORTH);
+        JLabel title = new JLabel("Sandbox Game");
+        title.setFont(new Font("Arial", Font.BOLD, 32));
+        title.setForeground(Color.WHITE);
 
-        JPanel buttons = new JPanel();
         JButton start = new JButton("Entrar no Jogo");
         JButton exit = new JButton("Sair do Jogo");
-    
-        start.addActionListener((ActionEvent e) -> {dispose();
-            panel.requestFocus();
+
+        start.addActionListener(e -> {
+            layout.show(container, "GAME");
+            container.requestFocusInWindow();
         });
 
-        exit.addActionListener(e->System.exit(0));
+        exit.addActionListener(e -> System.exit(0));
 
-        buttons.add(start);
-        buttons.add(exit);
+        
+        GridBagConstraints gbc = new GridBagConstraints();
 
-        add(buttons, BorderLayout.CENTER);
+        gbc.gridy = 0;
+        add(title, gbc);
 
-        setSize(300, 200);
-        setLocationRelativeTo(parent);
+        gbc.gridy = 1;
+        add(start, gbc);
+
+        gbc.gridy = 2;
+        add(exit, gbc);
     }
 }

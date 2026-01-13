@@ -1,37 +1,63 @@
 //Menu de pause
 package core;
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
-public class PauseMenu extends JDialog {
+public class PauseMenu extends JPanel {
     
-    public PauseMenu(JFrame parent, GamePanel panel){
+    public PauseMenu(GamePanel panel){
 
-        super(parent, "Pause", false);
-        setLayout(new GridLayout(5, 1));
+        setLayout(new GridBagLayout());
+        setBackground(new Color(0, 0, 0, 180));
+        setOpaque(true);
+        setVisible(false);
 
-        JButton exit = new JButton("Sair do jogo");
-        exit.addActionListener(e-> System.exit(0));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridy = 0;
+        gbc.insets = new Insets(10, 10, 10, 10);
 
+
+        JLabel title = new JLabel("PAUSE");
+        title.setFont(new Font("Arial", Font.BOLD, 32));
+        title.setForeground(Color.WHITE);
+        add(title, gbc);
+
+
+        gbc.gridy++;
         JSlider scaleSlider = new JSlider(1, 10, panel.scale);
-        scaleSlider.setBorder(BorderFactory.createTitledBorder("Tamanho do Pixel"));
-        scaleSlider.addChangeListener(e-> panel.scale = scaleSlider.getValue());
+        scaleSlider.addChangeListener(e -> {
+            panel.scale = scaleSlider.getValue();
+        });
+        add(new JLabel("Tamanho do Pixel"), gbc);
+        gbc.gridy++;
+        add(scaleSlider, gbc);
 
-        JSlider upsSlider = new JSlider(10, 120, panel.UPS);
-        upsSlider.setBorder(BorderFactory.createTitledBorder("Velocidade do Jogo (UPS)"));
-        upsSlider.addChangeListener(e -> panel.UPS = upsSlider.getValue());
 
-        JSlider tileSlider = new JSlider(1, 5, panel.originalTileSize);
-        tileSlider.setBorder(BorderFactory.createTitledBorder("Quantidade de Pixels"));
-        tileSlider.addChangeListener(e -> panel.originalTileSize = tileSlider.getValue());
+        gbc.gridy++;
+        JSlider upsSlider = new JSlider(30, 300, panel.UPS);
+        upsSlider.addChangeListener(e -> {
+            panel.UPS = upsSlider.getValue();
+        });
+        add(new JLabel("Velocidade do Jogo"), gbc);
+        gbc.gridy++;
+        add(upsSlider, gbc);
 
-        add(scaleSlider);
-        add(upsSlider);
-        add(tileSlider);
-        add(exit);
 
-        pack();
-        setLocationRelativeTo(parent);
+        gbc.gridy++;
+        JSlider tileSlider = new JSlider(1, 4, panel.originalTileSize);
+        tileSlider.addChangeListener(e -> {
+            panel.originalTileSize = tileSlider.getValue();
+        });
+        add(new JLabel("Quantidade de Pixels"), gbc);
+        gbc.gridy++;
+        add(tileSlider, gbc);
+
+
+        gbc.gridy++;
+        JButton exit = new JButton("Sair do Jogo");
+        exit.addActionListener(e -> System.exit(0));
+        add(exit, gbc);
+        
     }
 }
