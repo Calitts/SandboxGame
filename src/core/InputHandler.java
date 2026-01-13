@@ -1,9 +1,8 @@
 package core;
+
 // import java.awt.event.KeyListener;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-// import javax.swing.Position;
 import java.awt.event.MouseEvent;
 // import org.w3c.dom.events.MouseEvent;
 

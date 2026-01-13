@@ -11,7 +11,7 @@ import element.*;
 
 class GamePanel extends JPanel implements Runnable {
 
-    protected int originalTileSize = 5;
+    protected int originalTileSize = 1;
     protected int scale = 6;
 
     protected int tileSize = originalTileSize * scale;
@@ -39,9 +39,13 @@ class GamePanel extends JPanel implements Runnable {
         gameThread.start();
     }
 
+    public void menuPage() {
+
+    }
+
     private int UPS = 60;
-    private int FPS = 0;
-    private int ticks = 0;
+    private int FPS;
+    private int ticks;
     long nextStat = System.nanoTime();
     Pixel[][] screen = new Pixel[col][row];
 
@@ -53,12 +57,14 @@ class GamePanel extends JPanel implements Runnable {
         long lastTime = System.nanoTime();
         long currentTime;
 
+        menuPage();
+
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
                 screen[x][y] = new Pixel();
             }
         }
-        screen[1][1].setType(new Areia());
+        // screen[1][1].setType(new Areia());
 
         while (gameThread != null) {
 
@@ -112,31 +118,34 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public void handlePhysics() {
-        // Pixel[][] oldScreen = new Pixel[col][row];
+        Pixel[][] oldScreen = new Pixel[col][row];
+        Pixel[][] newScreen = new Pixel[col][row];
 
-        // for (int x = 0; x < col; x++) {
-        // for (int y = 0; y < row; y++) {
-        // oldScreen[x][y] = new Pixel(screen[x][y].getType());
-        // }
-        // }
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                Pixel pixel = screen[x][y];
+                oldScreen[x][y] = new Pixel(screen[x][y].getType());
+                newScreen[x][y] = new Pixel();
+            }
+        }
+        for (int x = 0; x < col; x++) {
+            for (int y = 0; y < row; y++) {
+                Pixel pixel = oldScreen[x][y];
                 int gravity = pixel.getGravity();
                 if (y + gravity < row) {
-                    Pixel prevpixel = screen[x][y + gravity];
-                    screen[x][y + gravity] = new Pixel(pixel.getType());
-                    // break outer;
-                    screen[x][y] = prevpixel;
+                    Pixel prevpixel = newScreen[x][y + gravity];
+                    newScreen[x][y + gravity] = new Pixel(pixel.getType());
+                    newScreen[x][y] = prevpixel;
+                } else {
+                    newScreen[x][row] = pixel;
                 }
             }
         }
 
-        // for (int x = 0; x < col; x++) {
-        // for (int y = 0; y < row; y++) {
-        // screen[x][y] = new Pixel(oldScreen[x][y].getType());
-        // }
-        // }
+        for (int x = 0; x < col; x++) {
+            for (int y = 0; y < row; y++) {
+                screen[x][y] = new Pixel(newScreen[x][y].getType());
+            }
+        }
     }
 
     public void paintComponent(Graphics g) {

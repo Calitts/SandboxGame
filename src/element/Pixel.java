@@ -2,7 +2,6 @@ package element;
 
 import java.awt.Color;
 
-import core.Position;
 
 // Classe onde os pixels terão seus comportamentos classificados
 

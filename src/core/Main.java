@@ -1,12 +1,7 @@
 package core;
 import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.SwingUtilities;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionListener;
 
 // Classe Principal. Onde o jogo será renderizado.
 class Main extends JFrame implements Runnable {
