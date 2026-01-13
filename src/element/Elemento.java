@@ -38,26 +38,6 @@ abstract class Elemento {
 }
 
 
-
-<<<<<<< HEAD:src/element/Elemento.java
-=======
-//ELEMENTOS
-   
-// Líquido  que apaga fogo
-class Agua extends Elemento {
-    public Agua() {
-        super("Água", 0x0000FF, 5, false, true, false, false);
-    }
-}
-
-// Elemento granuloso que cai
-class Areia extends Elemento {
-    public Areia() {
-        super("Areia", 0xFFFF00, 6, true, false, false, false);
-    }
-}
-
->>>>>>> cd20c59b809f23136d6f8ee59fbdc79ce296cf6d:src/Element.java
 // Queima elementos inflamáveis
 class Fogo extends Elemento {
     public Fogo() {
