@@ -13,11 +13,11 @@ public class StartMenu extends JDialog{
         setLayout(new BorderLayout());
 
         JLabel title = new JLabel("Sandbox Game", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", font.BOLD, 26));
+        title.setFont(new Font("Arial", Font.BOLD, 26));
         add(title, BorderLayout.NORTH);
 
-        JPanel buttons = new Jpanel();
-        JButton start = new Jbutton(Entrar no Jogo);
+        JPanel buttons = new JPanel();
+        JButton start = new JButton("Entrar no Jogo");
         JButton exit = new JButton("Sair do Jogo");
     
         start.addActionListener((ActionEvent e) -> {dispose();

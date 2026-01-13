@@ -18,7 +18,7 @@ class Main extends JFrame implements Runnable {
         frame.pack();
         frame.setVisible(true);
 
-        KeyHandler keyHandler = new keyHandler(frame, panel);
+        KeyHandler keyHandler = new KeyHandler(frame, panel);
         frame.addKeyListener(keyHandler);
 
         StartMenu menu = new StartMenu(frame, panel);

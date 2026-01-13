@@ -43,7 +43,7 @@ class GamePanel extends JPanel implements Runnable {
 
     }
 
-    private int UPS = 60;
+    public int UPS = 200;
     private int FPS;
     private int ticks;
     long nextStat = System.nanoTime();
@@ -136,7 +136,7 @@ class GamePanel extends JPanel implements Runnable {
                     newScreen[x][y + gravity] = new Pixel(pixel.getType());
                     newScreen[x][y] = prevpixel;
                 } else {
-                    newScreen[x][row] = pixel;
+                    newScreen[x][row - 1] = pixel;
                 }
             }
         }

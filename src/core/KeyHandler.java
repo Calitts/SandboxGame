@@ -1,7 +1,7 @@
 //Esc
 package core;
 
-import java.awt.event.keyAdapter;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 
@@ -16,7 +16,7 @@ public class KeyHandler extends KeyAdapter {
     }
 
     @Override
-    public void KeyPressed(KeyEvent e){
+    public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
             if(pauseMenu == null || !pauseMenu.isVisible()){
                 pauseMenu = new PauseMenu(frame, panel);

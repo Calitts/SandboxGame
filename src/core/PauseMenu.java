@@ -11,11 +11,11 @@ public class PauseMenu extends JDialog {
         super(parent, "Pause", false);
         setLayout(new GridLayout(5, 1));
 
-        JButton exit = new Jbutton("Sair do jogo");
+        JButton exit = new JButton("Sair do jogo");
         exit.addActionListener(e-> System.exit(0));
 
         JSlider scaleSlider = new JSlider(1, 10, panel.scale);
-        scaleSlider.setBorder(BorderFactory.createTitleBorder("Tamanho do Pixel"));
+        scaleSlider.setBorder(BorderFactory.createTitledBorder("Tamanho do Pixel"));
         scaleSlider.addChangeListener(e-> panel.scale = scaleSlider.getValue());
 
         JSlider upsSlider = new JSlider(10, 120, panel.UPS);
