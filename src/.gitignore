@@ -1,0 +1,6 @@
+# Log Files
+.metals/
+*.log
+
+# VS Code Stuff
+.vscode/
