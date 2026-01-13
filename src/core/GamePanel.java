@@ -136,7 +136,7 @@ class GamePanel extends JPanel implements Runnable {
                     newScreen[x][y + gravity] = new Pixel(pixel.getType());
                     newScreen[x][y] = prevpixel;
                 } else {
-                    newScreen[x][row] = pixel;
+                    newScreen[x][y] = pixel;
                 }
             }
         }
