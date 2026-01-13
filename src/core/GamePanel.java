@@ -45,11 +45,15 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     private int UPS = 300;
-    private int FPS;
-    private int ticks;
+    private int FPS = 0;
+    private int ticks = 0;
+    private int fps = 0;
+    private int tps = 0;
     private int penSize = 10;
     long nextStat = System.nanoTime();
     Pixel[][] screen = new Pixel[col][row];
+    Elemento currentType = new Ar();
+    Pixel cursorPixel = new Pixel();
 
     // Main Loop
     @Override
@@ -82,7 +86,8 @@ class GamePanel extends JPanel implements Runnable {
 
             // Redraw screen
             repaint();
-            // Performance check
+
+            // Measure Performance
             printStats();
         }
     }
@@ -98,15 +103,15 @@ class GamePanel extends JPanel implements Runnable {
         int y = input.getPosition().intY();
         if (x >= 0 && x < width && y >= 0 && y < height) {
 
-            Pixel pixel = screen[x / (tileSize)][y / (tileSize)];
-            Elemento currentType = input.getType();
+            cursorPixel = screen[x / (tileSize)][y / (tileSize)];
+            currentType = input.getType();
 
             if (input.isMouseClicked()) {
                 // System.out.println(
                 // String.format("MOUSE CLICKED AT: { %d, %d }", x, y));
 
                 System.out.println(
-                        String.format("ELEMENT \"%s\" AT { %d, %d } ", pixel.getName(), x / (tileSize),
+                        String.format("ELEMENT \"%s\" AT { %d, %d } ", cursorPixel.getName(), x / (tileSize),
                                 y / (tileSize)));
 
             }
@@ -150,21 +155,15 @@ class GamePanel extends JPanel implements Runnable {
                         + gravity].isSolid()) {
                     newScreen[x][y + gravity] = new Pixel(pixel.getType());
                 } else {
+                    // switch (pixel.getName()) {
+                    // case "Areia":
+
+                    // break;
+                    // default:
+                    // break;
+                    // }
                     newScreen[x][y] = new Pixel(pixel.getType());
                 }
-
-                // switch (pixel.getName()) {
-
-                // case "Areia":
-                // if (y + gravity < row && gravity > oldScreen[x][y + gravity].getGravity()) {
-                // newScreen[x][y + gravity] = new Pixel(pixel.getType());
-                // } else {
-                // newScreen[x][y] = new Pixel(pixel.getType());
-                // }
-                // break;
-                // default:
-                // break;
-                // }
 
             }
         }
@@ -181,6 +180,9 @@ class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
+        g2.setColor(new Color(currentType.getCor()));
+        g2.fillRect(width - 20, height + 10, 10, menuHeight - 20);
+
         // Game Rendering
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
@@ -194,15 +196,23 @@ class GamePanel extends JPanel implements Runnable {
             }
         }
 
+        // Information on Screen
+        g2.setColor(Color.WHITE);
+        g2.drawString(String.format("ELEMENTO: %s    POSIÇÃO: { %d, %d }", cursorPixel.getName(),
+                input.getPosition().intX(), input.getPosition().intY()), 10, 15);
+        g2.drawString(String.format("FPS: %5d   TPS: %4d", fps, tps), width - 130, 15);
+
         g2.dispose();
     }
 
     public void printStats() {
         if (System.nanoTime() > nextStat) {
             System.out.println(String.format("TPS: %d FPS: %d", ticks, FPS));
+            fps = FPS * 10;
+            tps = ticks * 10;
             ticks = 0;
             FPS = 0;
-            nextStat = System.nanoTime() + (long) 10e9;
+            nextStat = System.nanoTime() + (long) 10e8;
         }
     }
 
