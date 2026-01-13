@@ -18,6 +18,12 @@ class Main extends JFrame implements Runnable {
         frame.pack();
         frame.setVisible(true);
 
+        KeyHandler keyHandler = new keyHandler(frame, panel);
+        frame.addKeyListener(keyHandler);
+
+        StartMenu menu = new StartMenu(frame, panel);
+        menu.setVisible(true);
+
         frame.setLocationRelativeTo(null);
         panel.startGameThread();
     }
