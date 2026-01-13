@@ -27,7 +27,7 @@ class GamePanel extends JPanel implements Runnable {
 
     GamePanel() {
         this.setPreferredSize(new Dimension(width, height + menuHeight));
-        this.setBackground(new Color(0xAFA010));
+        this.setBackground(new Color(0xAFA0A0));
         this.setDoubleBuffered(true);
         this.addMouseListener(input);
         this.addMouseMotionListener(input);
@@ -93,38 +93,38 @@ class GamePanel extends JPanel implements Runnable {
         handlePhysics();
     }
 
-
     public void handleInput() {
         int x = input.getPosition().intX();
         int y = input.getPosition().intY();
-        Pixel pixel = screen[x / (tileSize)][y / (tileSize)];
-        Elemento currentType = input.getType();
+        if (x >= 0 && x < width && y >= 0 && y < height) {
 
-        if (input.isMouseClicked()) {
-            // System.out.println(
-            // String.format("MOUSE CLICKED AT: { %d, %d }", x, y));
+            Pixel pixel = screen[x / (tileSize)][y / (tileSize)];
+            Elemento currentType = input.getType();
 
-            if (x >= 0 && x < width && y >= 0 && y < height) {
+            if (input.isMouseClicked()) {
+                // System.out.println(
+                // String.format("MOUSE CLICKED AT: { %d, %d }", x, y));
+
                 System.out.println(
                         String.format("ELEMENT \"%s\" AT { %d, %d } ", pixel.getName(), x / (tileSize),
                                 y / (tileSize)));
+
             }
 
-        }
-
-        if (input.isMousePressed()) {
-            // Bigger pencil
-            for (int p_x = x - penSize; p_x < x + penSize; p_x++) {
-                for (int p_y = y - penSize; p_y < y + penSize; p_y++) {
-                    if (p_x >= 0 && p_x < width && p_y >= 0 && p_y < height) {
-                        Pixel penPixel = screen[p_x / (tileSize)][p_y / (tileSize)];
-                        penPixel.setType(currentType);
+            if (input.isMousePressed()) {
+                // Bigger pencil
+                for (int p_x = x - penSize; p_x < x + penSize; p_x++) {
+                    for (int p_y = y - penSize; p_y < y + penSize; p_y++) {
+                        if (p_x >= 0 && p_x < width && p_y >= 0 && p_y < height) {
+                            Pixel penPixel = screen[p_x / (tileSize)][p_y / (tileSize)];
+                            penPixel.setType(currentType);
+                        }
                     }
                 }
             }
-        }
 
-        input.clearMouseClick();
+            input.clearMouseClick();
+        }
     }
 
     public void handlePhysics() {
@@ -140,19 +140,32 @@ class GamePanel extends JPanel implements Runnable {
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
                 Pixel pixel = oldScreen[x][y];
-                int gravity = pixel.getGravity();
-                if (y + gravity < row) {
-                    Pixel prevpixel = newScreen[x][y + gravity];
-                    if (prevpixel.getGravity() < gravity) {
-                        newScreen[x][y + gravity].setType(pixel.getType());
-                        newScreen[x][y].setType(prevpixel.getType());
-                    } 
-                    else {
-                        newScreen[x][y] = pixel;
-                    }
-                } else {
-                    newScreen[x][row - 1] = pixel;
+                int gravity = pixel.getGravity() > 0 ? 1 : 0;
+
+                if (pixel.getName() == "Ar") {
+                    continue;
                 }
+
+                if (y + gravity < row && pixel.getGravity() > oldScreen[x][y + gravity].getGravity() && !oldScreen[x][y
+                        + gravity].isSolid()) {
+                    newScreen[x][y + gravity] = new Pixel(pixel.getType());
+                } else {
+                    newScreen[x][y] = new Pixel(pixel.getType());
+                }
+
+                // switch (pixel.getName()) {
+
+                // case "Areia":
+                // if (y + gravity < row && gravity > oldScreen[x][y + gravity].getGravity()) {
+                // newScreen[x][y + gravity] = new Pixel(pixel.getType());
+                // } else {
+                // newScreen[x][y] = new Pixel(pixel.getType());
+                // }
+                // break;
+                // default:
+                // break;
+                // }
+
             }
         }
 
@@ -168,14 +181,15 @@ class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        // g2.setColor(Color.BLACK);
-        // g2.fillRect(0, 0, width, height);
-
         // Game Rendering
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
                 Pixel pixel = screen[x][y];
-                g2.setColor(pixel.getColor());
+                if (pixel.getName() == "Ar") {
+                    g2.setColor(pixel.getColor(50 * (y % 2)));
+                } else {
+                    g2.setColor(pixel.getColor(0));
+                }
                 g2.fillRect(x * tileSize, y * tileSize, originalTileSize * scale, originalTileSize * scale);
             }
         }

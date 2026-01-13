@@ -28,7 +28,8 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
     InputHandler() {
         typeMap.put((int)'A', new Ar());
         typeMap.put((int)'S', new Areia());
-        typeMap.put((int)'D', new Pedra());
+        typeMap.put((int) 'D', new Pedra());
+        typeMap.put((int) 'W', new Agua());
 
 
         mouseClicked = false;
