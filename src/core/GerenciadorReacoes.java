@@ -1,10 +1,5 @@
 package core;
 
-import elementos.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /*
  * =========================
  * GERENCIADOR DE REAÇÕES

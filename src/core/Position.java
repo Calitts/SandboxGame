@@ -1,7 +1,7 @@
 package core;
 public class Position {
-    double x;
-    double y;
+    private double x;
+    private double y;
 
 
     Position(double x, double y) {

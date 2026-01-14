@@ -2,6 +2,7 @@ package elementos;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.liquido.Lava;
 
 // sólido e inflamável
 public class Madeira extends Elemento implements IReagivel {

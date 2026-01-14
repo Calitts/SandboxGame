@@ -1,6 +1,8 @@
 package core;
 
 import elementos.*;
+import elementos.liquido.*;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -101,7 +103,7 @@ class GamePanel extends JPanel implements Runnable {
     Elemento currentType = new Ar();
     Pixel cursorPixel = new Pixel();
 
-    // Load images
+    //region Load images
     BufferedImage acido;
     BufferedImage agua;
     BufferedImage aguasalgada;
@@ -124,6 +126,7 @@ class GamePanel extends JPanel implements Runnable {
     BufferedImage vapor;
     BufferedImage vidro;
     BufferedImage background;
+    //endregion
 
     HashMap<String, Boolean> unlockMap = new HashMap<>();
 
@@ -283,7 +286,6 @@ class GamePanel extends JPanel implements Runnable {
                 }
             }
             input.setType(currentType);
-
         }
 
         if (input.getReset()) {

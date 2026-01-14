@@ -1,7 +1,8 @@
-package elementos;
+package elementos.liquido;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.Fogo;
 
 // Líquido instiga fogo
 public class Alcool extends Elemento implements IReagivel {

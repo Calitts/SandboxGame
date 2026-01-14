@@ -8,6 +8,7 @@ import java.awt.Color;
 
 public class Pixel {
     private Elemento type;
+    private Vector2D position;
 
     public Pixel() {
         this.type = new Ar();

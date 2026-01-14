@@ -1,7 +1,8 @@
-package elementos;
+package elementos.liquido;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.*;
 
 // Líquido  que apaga fogo
 public class Agua extends Elemento implements IReagivel {

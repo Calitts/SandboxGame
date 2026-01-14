@@ -1,7 +1,10 @@
-package elementos;
+package elementos.liquido;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.Fogo;
+import elementos.Sal;
+import elementos.Vapor;
 
 // Líquido salgado
 public class AguaSalgada extends Elemento implements IReagivel {

@@ -2,6 +2,9 @@ package elementos;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.liquido.Acido;
+import elementos.liquido.Agua;
+import elementos.liquido.Lava;
 
 // Elemento congelado
 public class Neve extends Elemento implements IReagivel {

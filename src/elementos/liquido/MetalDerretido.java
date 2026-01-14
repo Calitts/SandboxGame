@@ -1,7 +1,9 @@
-package elementos;
+package elementos.liquido;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.Metal;
+import elementos.Vapor;
 
 // Metal liquido
 public class MetalDerretido extends Elemento implements IReagivel {

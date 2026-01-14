@@ -2,6 +2,7 @@ package elementos;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.liquido.Lava;
 
 // Líquido inflamável
 public class Oleo extends Elemento implements IReagivel {

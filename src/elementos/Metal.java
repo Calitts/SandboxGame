@@ -2,6 +2,9 @@ package elementos;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.liquido.Acido;
+import elementos.liquido.Lava;
+import elementos.liquido.MetalDerretido;
 
 // Metal sólido pesado
 public class Metal extends Elemento implements IReagivel {

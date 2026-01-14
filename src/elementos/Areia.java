@@ -2,6 +2,8 @@ package elementos;
 
 import core.Elemento;
 import core.IReagivel;
+import elementos.liquido.Agua;
+import elementos.liquido.Lava;
 
 // Elemento granuloso que cai
 public class Areia extends Elemento implements IReagivel {
