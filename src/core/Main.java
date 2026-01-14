@@ -1,31 +1,72 @@
 package core;
 
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 // Classe Principal. Onde o jogo será renderizado.
 class Main extends JFrame implements Runnable {
-    GamePanel panel;
-
+    
+    @Override
     public void run() {
-        JFrame frame = new JFrame("MixBox");
+
+
+        JFrame frame = new JFrame("Mix Box");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-
-        panel = new GamePanel();
-        frame.add(panel);
-
-        frame.pack();
-        frame.setVisible(true);
-
-        KeyHandler keyHandler = new KeyHandler(frame, panel);
-        frame.addKeyListener(keyHandler);
-
-        StartMenu menu = new StartMenu(frame, panel);
-        menu.setVisible(true);
-
+        frame.setSize(1280, 720);
         frame.setLocationRelativeTo(null);
+
+        GamePanel panel = new GamePanel();
+        frame.add(panel);
+        panel.playMusic(0);
+
+        PauseMenu pauseMenu = new PauseMenu(panel);
+        panel.setPauseMenu(pauseMenu);
+
+        panel.setLayout(null);
+        panel.add(pauseMenu);
+        pauseMenu.setBounds(0, 0, 1280, 720);
+        pauseMenu.setVisible(false);
+
+        frame.setVisible(true);
         panel.startGameThread();
+
+
+        CardLayout cardLayout = new CardLayout();
+        JPanel container = new JPanel(cardLayout);
+
+        
+        JLayeredPane startScreen = new JLayeredPane();
+        startScreen.setPreferredSize(new Dimension(1280, 720));
+
+        AnimatedBackground bg = new AnimatedBackground();
+        bg.setBounds(0, 0, 1280, 720);
+
+        StartMenu menu = new StartMenu(cardLayout, container);
+        menu.setBounds(0, 0, 1280, 720);
+
+        startScreen.add(bg, Integer.valueOf(0));
+        startScreen.add(menu, Integer.valueOf(1));
+
+        panel.setComponentZOrder(pauseMenu, 0);
+
+        container.add(menu, "MENU");
+        container.add(panel, "GAME");
+        
+
+        frame.add(container, BorderLayout.CENTER);
+
+        frame.setSize(1280, 720);
+        frame.setLocationRelativeTo(null);
+
+        // MOSTRA O MENU PRIMEIRO
+        cardLayout.show(container, "MENU");
+        
+        
     }
 
     public static void main(String[] args) {

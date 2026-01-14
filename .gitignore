@@ -1,7 +1,0 @@
-# Log Files
-.metals/
-/src/.metals
-*.log
-
-# VS Code Stuff
-.vscode/

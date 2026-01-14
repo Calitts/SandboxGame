@@ -1,21 +1,34 @@
 package core;
 
+import element.*;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.awt.Color;
-import java.lang.Thread;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
 import javax.swing.JPanel;
 
 import java.util.HashMap;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import java.io.IOException;
+import javax.swing.KeyStroke;
 
-import element.*;
+import java.util.HashMap;
+import java.util.Random;
+import javax.imageio.ImageIO;
+import java.io.IOException;
 
 class GamePanel extends JPanel implements Runnable {
+
+    // Resolução base 16:9
+    private final int BASE_WIDTH = 1280;
+    private final int BASE_HEIGHT = 720;
+    private PauseMenu pauseMenu;
+    
+
 
     protected int originalTileSize = 1;
     protected int scale = 6;
@@ -25,26 +38,59 @@ class GamePanel extends JPanel implements Runnable {
     protected int row = 10 * (10 / originalTileSize);
     protected int width = tileSize * col;
     protected int height = tileSize * row;
+    protected boolean paused = false;
+
 
     protected int menuHeight = 200;
 
     Thread gameThread;
     InputHandler input = new InputHandler();
 
+    Sound sound = new Sound();
+
     GamePanel() {
         this.setPreferredSize(new Dimension(width, height + menuHeight));
-        this.setBackground(new Color(0xAFA0A0));
+        this.setBackground(new Color(0xAFA010));
         this.setDoubleBuffered(true);
+        this.setFocusable(true);
+
         this.addMouseListener(input);
         this.addMouseMotionListener(input);
         this.addKeyListener(input);
-        this.setFocusable(true);
+
+        this. getInputMap(WHEN_IN_FOCUSED_WINDOW)
+        .put(KeyStroke.getKeyStroke("ESCAPE"), "pause");
+
+        this.setPreferredSize(new Dimension(width, height + menuHeight));
+
+
+        this.getActionMap().put("pause", new AbstractAction() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        togglePauseMenu();
+        }   
+    });
+
     }
+
+    public void resumeGame() {
+    paused = false;
+    if (pauseMenu != null) {
+        pauseMenu.setVisible(false);
+    }
+    requestFocusInWindow();
+    }
+
 
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
     }
+
+    public void setPauseMenu(PauseMenu menu) {
+    this.pauseMenu = menu;
+    }
+
 
     public void menuPage() {
 
@@ -139,11 +185,14 @@ class GamePanel extends JPanel implements Runnable {
 
     public void update() {
         this.setPreferredSize(new Dimension(width, height + menuHeight));
-        ticks++;
-        handleInput();
-        handlePhysics();
+    if (paused) return;
+
+    ticks++;
+    handleInput();
+    handlePhysics();
         handleChemistry();
     }
+
 
     public void handleInput() {
         int x = input.getPosition().intX();
@@ -413,15 +462,35 @@ class GamePanel extends JPanel implements Runnable {
         Graphics2D g2 = (Graphics2D) g;
 
         // Game Rendering
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                Pixel pixel = screen[x][y];
+    double scaleX = getWidth() / (double) BASE_WIDTH;
+    double scaleY = getHeight() / (double) BASE_HEIGHT;
+    double scaleFactor = Math.min(scaleX, scaleY);
+
+    int renderWidth = (int) (BASE_WIDTH * scaleFactor);
+    int renderHeight = (int) (BASE_HEIGHT * scaleFactor);
+
+    int offsetX = (getWidth() - renderWidth) / 2;
+    int offsetY = (getHeight() - renderHeight) / 2;
+
+    // fundo preto (barras laterais)
+    g2.setColor(Color.BLACK);
+    g2.fillRect(0, 0, getWidth(), getHeight());
+
+    // desenha o jogo centralizado
+    for (int x = 0; x < col; x++) {
+        for (int y = 0; y < row; y++) {
+            Pixel pixel = screen[x][y];
                 if (pixel.getName() == "Ar") {
                     g2.setColor(pixel.getColor(50 * (y % 2)));
                 } else {
-                    g2.setColor(pixel.getColor(0));
+                g2.setColor(pixel.getColor(0));
                 }
-                g2.fillRect(x * tileSize, y * tileSize, originalTileSize * scale, originalTileSize * scale);
+
+            int drawX = offsetX + (int) (x * tileSize * scaleFactor);
+            int drawY = offsetY + (int) (y * tileSize * scaleFactor);
+            int drawSize = (int) (tileSize * scaleFactor);
+
+            g2.fillRect(drawX, drawY, drawSize, drawSize);
             }
         }
 
@@ -436,7 +505,7 @@ class GamePanel extends JPanel implements Runnable {
                 input.getPosition().intX(), input.getPosition().intY()), 10, 15);
         g2.drawString(String.format("FPS: %5d   TPS: %4d", fps, tps), width - 130, 15);
 
-        g2.dispose();
+         g2.dispose();
     }
 
     public void loadTiles() {
@@ -536,6 +605,35 @@ class GamePanel extends JPanel implements Runnable {
             return true;
         }
         return false;
+    }
+
+    private void togglePauseMenu() {
+    paused = !paused;
+    System.out.println("PAUSE = " + paused);
+
+    if (pauseMenu != null) {
+        pauseMenu.setVisible(paused);
+        pauseMenu.repaint();
+
+        }
+
+        if(!paused){
+            requestFocusInWindow();
+        }
+
+    }
+
+    public void playMusic(int i) {
+        sound.loop(i);
+    }
+
+    public void stopMusic() {
+        sound.stop(0);
+    }
+
+    public void playSE(int i) {
+       
+        sound.play(i);
     }
 
 }
