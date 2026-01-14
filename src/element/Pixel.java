@@ -13,14 +13,14 @@ public class Pixel {
     }
 
     public Pixel(Elemento e) {
-        this.type = new Ar();
-        this.type.nome = e.nome;
-        this.type.cor = e.getCor();
-        this.type.peso = e.peso;
-        this.type.liquido = e.liquido;
-        this.type.solido = e.solido;
-        this.type.gasoso = e.gasoso;
-        this.type.inflamavel = e.inflamavel;
+        this.type = e;
+        // this.type.nome = e.nome;
+        // this.type.cor = e.getCor();
+        // this.type.peso = e.peso;
+        // this.type.liquido = e.liquido;
+        // this.type.solido = e.solido;
+        // this.type.gasoso = e.gasoso;
+        // this.type.inflamavel = e.inflamavel;
         int offset = 0;
         
         this.type.cor += offset;

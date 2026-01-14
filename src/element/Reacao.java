@@ -3,7 +3,7 @@ package element;
 
 // LOGICA DE REAÇÕES
 
-class Reacao {
+public class Reacao {
 
     public Class<? extends Elemento> a; // pega determinada classe que participe da reação
     public Class<? extends Elemento> b;

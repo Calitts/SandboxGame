@@ -35,4 +35,8 @@ public abstract class Elemento {
     public int getCor() {
         return this.cor;
     }
+
+    public String getNome() {
+        return this.nome;
+    }
 }

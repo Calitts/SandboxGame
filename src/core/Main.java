@@ -1,20 +1,20 @@
 package core;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-
 
 // Classe Principal. Onde o jogo será renderizado.
 class Main extends JFrame implements Runnable {
     GamePanel panel;
 
     public void run() {
-        JFrame frame = new JFrame("Sandbox Game");
+        JFrame frame = new JFrame("MixBox");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        
+
         panel = new GamePanel();
         frame.add(panel);
-        
+
         frame.pack();
         frame.setVisible(true);
 
