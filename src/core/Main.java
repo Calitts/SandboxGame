@@ -23,6 +23,7 @@ class Main extends JFrame implements Runnable {
 
         GamePanel panel = new GamePanel();
         frame.add(panel);
+        panel.playMusic(0);
 
         PauseMenu pauseMenu = new PauseMenu(panel);
         panel.setPauseMenu(pauseMenu);

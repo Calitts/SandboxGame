@@ -36,6 +36,8 @@ class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     InputHandler input = new InputHandler();
 
+    Sound sound = new Sound();
+
     GamePanel() {
         this.setLayout(null); 
         this.setBackground(new Color(0xAFA010));
@@ -254,6 +256,19 @@ class GamePanel extends JPanel implements Runnable {
             requestFocusInWindow();
         }
 
+    }
+
+    public void playMusic(int i) {
+        sound.loop(i);
+    }
+
+    public void stopMusic() {
+        sound.stop(0);
+    }
+
+    public void playSE(int i) {
+       
+        sound.play(i);
     }
 
 }
