@@ -6,6 +6,8 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import java.lang.Thread;
 import javax.swing.JPanel;
+import java.util.Random;
+import java.lang.Math;
 
 import element.*;
 
@@ -49,7 +51,7 @@ class GamePanel extends JPanel implements Runnable {
     private int ticks = 0;
     private int fps = 0;
     private int tps = 0;
-    private int penSize = 10;
+    private int penSize = 1;
     long nextStat = System.nanoTime();
     Pixel[][] screen = new Pixel[col][row];
     Elemento currentType = new Ar();
@@ -96,6 +98,7 @@ class GamePanel extends JPanel implements Runnable {
         ticks++;
         handleInput();
         handlePhysics();
+        handleChemistry();
     }
 
     public void handleInput() {
@@ -132,7 +135,12 @@ class GamePanel extends JPanel implements Runnable {
         }
     }
 
+    public void handleChemistry() {
+
+    }
+
     public void handlePhysics() {
+        Random gen = new Random();
         Pixel[][] oldScreen = new Pixel[col][row];
         Pixel[][] newScreen = new Pixel[col][row];
 
@@ -144,31 +152,79 @@ class GamePanel extends JPanel implements Runnable {
         }
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                Pixel pixel = oldScreen[x][y];
-                int gravity = pixel.getGravity() > 0 ? 1 : 0;
+                Pixel pixel = new Pixel(oldScreen[x][y].getType());
+                int gravity = pixel.isGas() ? 0 : 1;
 
                 if (pixel.getName() == "Ar") {
                     continue;
                 }
 
-                if (y + gravity < row && pixel.getGravity() > oldScreen[x][y + gravity].getGravity() && !oldScreen[x][y
-                        + gravity].isSolid()) {
+                if (y + gravity >= row) {
+                    newScreen[x][y] = new Pixel(pixel.getType());
+
+                } else if (pixel.getWeight() > oldScreen[x][y + gravity].getWeight()
+                        && !oldScreen[x][y + gravity].isSolid()) {
+                    Pixel tempPixel = oldScreen[x][y + gravity];
                     newScreen[x][y + gravity] = new Pixel(pixel.getType());
+                    newScreen[x][y] = new Pixel(tempPixel.getType());
+
                 } else {
+                    // newScreen[x][y] = new Pixel(pixel.getType());
+
                     // switch (pixel.getName()) {
                     // case "Areia":
 
+                    int dir = gen.nextInt(3);
+                    int end, inc;
+                    if (dir != 0) {
+                        inc = 1;
+                        // start = x - pixel.getFlow();
+                        end = x + pixel.getFlow() + 1;
+                    } else {
+                        inc = -1;
+                        end = x - pixel.getFlow() - 1;
+                        // start = x + pixel.getFlow();
+                    }
+
+                    boolean succes = false;
+
+                    for (int i = x + inc; i != end; i += inc) {
+                        try {
+                            if (!oldScreen[i][y + 1].isSolid()) {
+                                if (pixel.getWeight() > oldScreen[i][y + 1].getWeight()) {
+                                    Pixel tempPixel = oldScreen[i][y + 1];
+                                    newScreen[i][y + 1] = new Pixel(pixel.getType());
+                                    newScreen[x][y] = new Pixel(tempPixel.getType());
+                                    succes = true;
+                                    break;
+                                }
+                            } else {
+                                // newScreen[x][y] = new Pixel(pixel.getType());
+                                break;
+                            }
+
+                        } catch (IndexOutOfBoundsException e) {
+                            break;
+                        }
+                    }
+                    if (succes) {
+                        continue;
+                    }
+                    newScreen[x][y] = new Pixel(pixel.getType());
+                    
+
                     // break;
                     // default:
+                    // newScreen[x][y] = new Pixel(pixel.getType());
                     // break;
                     // }
-                    newScreen[x][y] = new Pixel(pixel.getType());
                 }
-
             }
         }
 
-        for (int x = 0; x < col; x++) {
+        for (
+
+                int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
                 screen[x][y] = new Pixel(newScreen[x][y].getType());
             }
@@ -207,11 +263,11 @@ class GamePanel extends JPanel implements Runnable {
 
     public void printStats() {
         if (System.nanoTime() > nextStat) {
-            System.out.println(String.format("TPS: %d FPS: %d", ticks, FPS));
-            fps = FPS * 10;
-            tps = ticks * 10;
+            fps = FPS;
+            tps = ticks;
             ticks = 0;
             FPS = 0;
+            System.out.println(String.format("TPS: %d FPS: %d", tps, fps));
             nextStat = System.nanoTime() + (long) 10e8;
         }
     }

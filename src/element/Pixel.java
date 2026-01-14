@@ -13,12 +13,16 @@ public class Pixel {
     }
 
     public Pixel(Elemento e) {
-        this.type = e;
+        this.type = new Ar();
+        this.type.nome = e.nome;
+        this.type.cor = e.getCor();
+        this.type.peso = e.peso;
+        this.type.liquido = e.liquido;
+        this.type.solido = e.solido;
+        this.type.gasoso = e.gasoso;
+        this.type.inflamavel = e.inflamavel;
         int offset = 0;
-        // if (type.nome != "Ar") {
-        //     Random gen = new Random();
-        //     offset = gen.nextInt(60) - 30;
-        // }
+        
         this.type.cor += offset;
     }
 
@@ -30,6 +34,17 @@ public class Pixel {
         return this.type.solido;
     }
 
+    public boolean isGas() {
+        return this.type.gasoso;
+    }
+
+    public int getFlow() {
+        if (this.type.liquido) {
+            return 50;
+        }
+        return 1;
+    }
+
     public String getName() {
         return this.type.nome;
     }
@@ -38,7 +53,7 @@ public class Pixel {
         return new Color(this.type.getCor() + offset);
     }
 
-    public int getGravity() {
+    public int getWeight() {
         int res = this.type.peso;
         // try {
         // res = 10 / this.type.peso;

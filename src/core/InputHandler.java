@@ -26,11 +26,10 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
     private Elemento current;
 
     InputHandler() {
-        typeMap.put((int)'A', new Ar());
-        typeMap.put((int)'S', new Areia());
+        typeMap.put((int) 'A', new Ar());
+        typeMap.put((int) 'S', new Areia());
         typeMap.put((int) 'D', new Pedra());
         typeMap.put((int) 'W', new Agua());
-
 
         mouseClicked = false;
         pointerPos = new Position(0, 0);
@@ -38,7 +37,10 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
     }
 
     private void setType(int key) {
-        current = typeMap.get(key);
+        Elemento temp = typeMap.get(key);
+        if (temp != null) {
+            current = temp;
+        }
     }
 
     public Elemento getType() {
@@ -46,7 +48,7 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
     }
 
     public void keyPressed(KeyEvent e) {
-        
+
     }
 
     public void keyReleased(KeyEvent e) {
@@ -55,7 +57,7 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
     }
 
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     public void clearMouseClick() {
