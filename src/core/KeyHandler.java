@@ -15,9 +15,9 @@ public class KeyHandler extends KeyAdapter {
     }
 
     @Override
-    public void keyPressed(KeyEvent e){
-        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-            if(pauseMenu == null || !pauseMenu.isVisible()){
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            if (pauseMenu == null || !pauseMenu.isVisible()) {
                 pauseMenu.setVisible(true);
             }
         }

@@ -35,7 +35,7 @@ public class StartMenu extends JPanel {
         start.addActionListener(e -> {
             sound.play(1); // Toca "button.wav"
             sound.stop(0); // Para a música da floresta ao entrar no jogo
-            layout.show(container, "GAME"); 
+            layout.show(container, "GAME");
         });
 
         exit.addActionListener(e -> {

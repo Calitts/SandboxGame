@@ -13,27 +13,29 @@ class Main extends JFrame implements Runnable {
 
     // int width = 1280;
     // int height = 720;
-    protected int originalTileSize = 1;
-    protected int scale = 6;
+    // protected int originalTileSize = 1;
+    // protected int scale = 6;
 
-    protected int tileSize = originalTileSize * scale;
-    protected int col = 14 * (10 / originalTileSize);
-    protected int row = 10 * (10 / originalTileSize);
-    protected int panelWidth = tileSize * col;
-    protected int menuHeight = 200;
-    protected int panelHeight = tileSize * row + menuHeight;
-    int width = panelWidth;
-    int height = panelHeight;
+    // protected int tileSize = originalTileSize * scale;
+    // protected int col = 14 * (10 / originalTileSize);
+    // protected int row = 10 * (10 / originalTileSize);
+    // protected int panelWidth = tileSize * col;
+    // protected int menuHeight = 200;
+    // protected int panelHeight = tileSize * row + menuHeight;
+    // int width = panelWidth;
+    // int height = panelHeight;
 
     @Override
     public void run() {
+        GamePanel panel = new GamePanel();
+        int width = panel.width;
+        int height = panel.height + panel.menuHeight + 50;
 
         JFrame frame = new JFrame("Mix Box");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(width, height));
         frame.setLocationRelativeTo(null);
 
-        GamePanel panel = new GamePanel();
         frame.add(panel);
         panel.playMusic(0);
 
@@ -42,6 +44,7 @@ class Main extends JFrame implements Runnable {
 
         panel.setLayout(null);
         panel.add(pauseMenu);
+        panel.setSize(panel.width, panel.height + panel.menuHeight);
         pauseMenu.setBounds(0, 0, width, height);
         pauseMenu.setVisible(false);
 
@@ -52,7 +55,7 @@ class Main extends JFrame implements Runnable {
         JPanel container = new JPanel(cardLayout);
 
         JLayeredPane startScreen = new JLayeredPane();
-        startScreen.setPreferredSize(new Dimension(width, height));
+        startScreen.setSize(new Dimension(width, height));
 
         AnimatedBackground bg = new AnimatedBackground();
         bg.setBounds(0, 0, width, height);
@@ -71,8 +74,8 @@ class Main extends JFrame implements Runnable {
         frame.add(container, BorderLayout.CENTER);
 
         // frame.setSize(width, height);
-        frame.setSize(panelWidth, panelHeight);
-        frame.setResizable(false);
+        frame.pack();
+        frame.setResizable(true);
         frame.setLocationRelativeTo(null);
 
         // MOSTRA O MENU PRIMEIRO

@@ -1,7 +1,6 @@
 package element;
 
 import java.awt.Color;
-import java.util.Random;
 
 // Classe onde os pixels terão seus comportamentos classificados
 
@@ -54,13 +53,7 @@ public class Pixel {
     }
 
     public int getWeight() {
-        int res = this.type.peso;
-        // try {
-        // res = 10 / this.type.peso;
-        // } catch (ArithmeticException e) {
-        // res = 0;
-        // }
-        return res;
+        return this.type.peso;
     }
 
     public Elemento getType() {

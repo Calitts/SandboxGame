@@ -4,8 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class PauseMenu extends JPanel {
-    
-    public PauseMenu(GamePanel panel){
+
+    public PauseMenu(GamePanel panel) {
 
         setLayout(new GridBagLayout());
         setBackground(new Color(0, 0, 0, 180));
@@ -16,12 +16,10 @@ public class PauseMenu extends JPanel {
         gbc.gridy = 0;
         gbc.insets = new Insets(10, 10, 10, 10);
 
-
         JLabel title = new JLabel("PAUSE");
         title.setFont(new Font("Arial", Font.BOLD, 32));
         title.setForeground(Color.WHITE);
         add(title, gbc);
-
 
         gbc.gridy++;
         JSlider scaleSlider = new JSlider(1, 10, panel.scale);
@@ -32,7 +30,6 @@ public class PauseMenu extends JPanel {
         gbc.gridy++;
         add(scaleSlider, gbc);
 
-
         gbc.gridy++;
         JSlider upsSlider = new JSlider(30, 300, panel.UPS);
         upsSlider.addChangeListener(e -> {
@@ -42,16 +39,14 @@ public class PauseMenu extends JPanel {
         gbc.gridy++;
         add(upsSlider, gbc);
 
-
         gbc.gridy++;
-        JSlider tileSlider = new JSlider(1, 4, panel.originalTileSize);
+        JSlider tileSlider = new JSlider(1, 15, panel.originalTileSize);
         tileSlider.addChangeListener(e -> {
-            panel.originalTileSize = tileSlider.getValue();
+            panel.penSize = tileSlider.getValue();
         });
-        add(new JLabel("Quantidade de Pixels"), gbc);
+        add(new JLabel("Tamanho do pincel"), gbc);
         gbc.gridy++;
         add(tileSlider, gbc);
-
 
         gbc.gridy++;
         JButton exit = new JButton("Sair do Jogo");
@@ -61,6 +56,6 @@ public class PauseMenu extends JPanel {
         JButton back = new JButton("Voltar ao Jogo");
         back.addActionListener(e -> panel.resumeGame());
         add(back, gbc);
-        
+
     }
 }

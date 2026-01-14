@@ -56,14 +56,16 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
         return reset;
     }
 
-    public void setReset(boolean r){
+    public void setReset(boolean r) {
         reset = r;
     }
 
+    @Override
     public void keyPressed(KeyEvent e) {
 
     }
 
+    @Override
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == 'C') {
