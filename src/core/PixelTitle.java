@@ -7,16 +7,14 @@ import javax.swing.*;
 
 public class PixelTitle extends JPanel {
 
-    // --- MUDANÇA 1: NOVO NOME ---
+  
     private final String text = "MIX BOX";
     private float angle = 0;
 
-    // Aumentei o pixelScale de 9 para 11, pois o nome é mais curto
-    // Assim ele preenche melhor a tela
+    
     private final int pixelScale = 11; 
     private final int letterSpacing = 3; 
 
-    // --- PALETA VIBRANTE (Mantive o Ouro/Fogo que destaca na floresta) ---
     private final Color[] vibrantPalette = {
         new Color(255, 215, 0),   // Dourado
         new Color(255, 165, 0),   // Laranja
@@ -79,15 +77,12 @@ public class PixelTitle extends JPanel {
                         int drawX = currentX + (col * pixelScale);
                         int drawY = currentY + (row * pixelScale);
 
-                        // Contorno Preto Grosso
                         g2.setColor(Color.BLACK);
                         g2.fillRect(drawX - 2, drawY - 2, pixelScale + 4, pixelScale + 4);
                         
-                        // Cor Principal
                         g2.setColor(mainColor);
                         g2.fillRect(drawX, drawY, pixelScale, pixelScale);
 
-                        // Brilho
                         g2.setColor(new Color(255, 255, 255, 180));
                         g2.fillRect(drawX, drawY, pixelScale / 3, pixelScale / 3);
                     }

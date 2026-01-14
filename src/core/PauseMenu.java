@@ -1,4 +1,3 @@
-//Menu de pause
 package core;
 
 import java.awt.*;

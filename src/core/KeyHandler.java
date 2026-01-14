@@ -1,4 +1,3 @@
-//Esc
 package core;
 
 import java.awt.event.KeyAdapter;

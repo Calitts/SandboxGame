@@ -1,10 +1,8 @@
 package core;
 
-// import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseEvent;
-// import org.w3c.dom.events.MouseEvent;
 
 
 public class InputHandler implements MouseListener, MouseMotionListener {
@@ -13,8 +11,6 @@ public class InputHandler implements MouseListener, MouseMotionListener {
     private boolean mouseClicked;
     private boolean mousePressed;
 
-    // private boolean[] currentlyPressed;
-    // private boolean[] pressed;
 
     InputHandler() {
         mouseClicked = false;

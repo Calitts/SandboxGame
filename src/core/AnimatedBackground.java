@@ -44,7 +44,6 @@ public class AnimatedBackground extends JPanel {
             g.fillRect(0, 0, getWidth(), getHeight());
             g.setColor(Color.WHITE);
             g.drawString("Imagem não encontrada", 20, 20);
-            }
         }
+    }
 }
-

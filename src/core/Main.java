@@ -16,7 +16,7 @@ class Main extends JFrame implements Runnable {
     public void run() {
 
 
-        JFrame frame = new JFrame("Sandbox Game");
+        JFrame frame = new JFrame("Mix Box");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1280, 720);
         frame.setLocationRelativeTo(null);
@@ -39,7 +39,7 @@ class Main extends JFrame implements Runnable {
         CardLayout cardLayout = new CardLayout();
         JPanel container = new JPanel(cardLayout);
 
-        //menu
+        
         JLayeredPane startScreen = new JLayeredPane();
         startScreen.setPreferredSize(new Dimension(1280, 720));
 

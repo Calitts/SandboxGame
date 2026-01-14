@@ -1,4 +1,3 @@
-//Menu Inicial
 package core;
 
 import java.awt.*;
