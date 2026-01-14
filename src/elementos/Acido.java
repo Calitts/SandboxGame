@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Líquido que derrete
 public class Acido extends Elemento {

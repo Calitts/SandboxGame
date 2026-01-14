@@ -7,8 +7,8 @@ import javax.sound.sampled.Clip;
 
 public class Sound {
     
-    Clip[] clips = new Clip[10];
-    URL[] soundURL = new URL[10];
+    private final Clip[] clips = new Clip[10];
+    private final URL[] soundURL = new URL[10];
 
     public Sound() {
         // Certifique-se que os arquivos bird.wav e button.wav estão na pasta 'res' ou 'src'
@@ -28,11 +28,10 @@ public class Sound {
             } else {
                 System.out.println("ERRO: O arquivo de som índice " + i + " não foi encontrado!");
             }
-        
-        
+
         } catch (Exception e) {
             System.out.println("ERRO ao carregar som " + i);
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
     }    
 

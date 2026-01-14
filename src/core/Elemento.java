@@ -1,19 +1,18 @@
-package element;
+package core;
 
 
 // ELEMENTO BASE
 
 public abstract class Elemento {
 
-    public String nome;
-    public int cor;
-    public int peso; // 0 = sem gravidade | 10 = muito pesado
+    private final String nome;
+    private final int cor;
+    public final int peso; // 0 = sem gravidade | 10 = muito pesado
     public int densidade;
-    public boolean solido;
-    public boolean liquido;
-    public boolean gasoso;
-    public boolean inflamavel;
-
+    public final boolean solido;
+    public final boolean liquido;
+    public final boolean gasoso;
+    public final boolean inflamavel;
 
     public Elemento(String nome, int cor, int peso, boolean solido,
             boolean liquido, boolean gasoso,
@@ -29,14 +28,14 @@ public abstract class Elemento {
     }
 
     public boolean sofreGravidade() {
-        return (solido || liquido) && peso > 0;
+        return !gasoso && peso > 0;
     }
 
     public int getCor() {
-        return this.cor;
+        return cor;
     }
 
-    public String getNome() {
-        return this.nome;
+    public String getName() {
+        return nome;
     }
 }

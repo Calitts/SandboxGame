@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // solido
 public class Sal extends Elemento {

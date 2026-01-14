@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Elemento elétrico
 public class Eletricidade extends Elemento {
