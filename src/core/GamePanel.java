@@ -37,19 +37,23 @@ class GamePanel extends JPanel implements Runnable {
     InputHandler input = new InputHandler();
 
     GamePanel() {
-        this.setPreferredSize(new Dimension(width, height + menuHeight));
+        this.setLayout(null); 
         this.setBackground(new Color(0xAFA010));
         this.setDoubleBuffered(true);
-        this.addMouseListener(input);
-        this.addMouseMotionListener(input);
         this.setFocusable(true);
 
-        this.getInputMap(WHEN_IN_FOCUSED_WINDOW)
-            .put(KeyStroke.getKeyStroke("ESCAPE"), "pause");
+        this.addMouseListener(input);
+        this.addMouseMotionListener(input);
+
+        this. getInputMap(WHEN_IN_FOCUSED_WINDOW)
+        .put(KeyStroke.getKeyStroke("ESCAPE"), "pause");
+
+        this.setPreferredSize(new Dimension(width, height + menuHeight));
+
 
         this.getActionMap().put("pause", new AbstractAction() {
         @Override
-         public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
         togglePauseMenu();
         }   
     });
@@ -238,13 +242,19 @@ class GamePanel extends JPanel implements Runnable {
 
     private void togglePauseMenu() {
     paused = !paused;
+    System.out.println("PAUSE = " + paused);
 
     if (pauseMenu != null) {
         pauseMenu.setVisible(paused);
-        pauseMenu.requestFocusInWindow();
-    
+        pauseMenu.repaint();
+
+        }
+
+        if(!paused){
+            requestFocusInWindow();
         }
 
     }
 
 }
+
