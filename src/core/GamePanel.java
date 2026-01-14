@@ -16,32 +16,26 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 import javax.swing.KeyStroke;
 
-import java.util.HashMap;
-import java.util.Random;
-import javax.imageio.ImageIO;
-import java.io.IOException;
-
 class GamePanel extends JPanel implements Runnable {
-
-    // Resolução base 16:9
-    private final int BASE_WIDTH = 1280;
-    private final int BASE_HEIGHT = 720;
-    private PauseMenu pauseMenu;
-    
-
 
     protected int originalTileSize = 1;
     protected int scale = 6;
-
+    
     protected int tileSize = originalTileSize * scale;
     protected int col = 14 * (10 / originalTileSize);
     protected int row = 10 * (10 / originalTileSize);
     protected int width = tileSize * col;
     protected int height = tileSize * row;
-    protected boolean paused = false;
-
-
     protected int menuHeight = 200;
+    protected boolean paused = false;
+    
+    // Resolução base 16:9
+    // private final int BASE_WIDTH = 1280;
+    // private final int BASE_HEIGHT = 720;
+    private final int BASE_WIDTH = width;
+    private final int BASE_HEIGHT = height + menuHeight;
+    private PauseMenu pauseMenu;
+
 
     Thread gameThread;
     InputHandler input = new InputHandler();
@@ -58,10 +52,8 @@ class GamePanel extends JPanel implements Runnable {
         this.addMouseMotionListener(input);
         this.addKeyListener(input);
 
-        this. getInputMap(WHEN_IN_FOCUSED_WINDOW)
+        this.getInputMap(WHEN_IN_FOCUSED_WINDOW)
         .put(KeyStroke.getKeyStroke("ESCAPE"), "pause");
-
-        this.setPreferredSize(new Dimension(width, height + menuHeight));
 
 
         this.getActionMap().put("pause", new AbstractAction() {
@@ -91,12 +83,7 @@ class GamePanel extends JPanel implements Runnable {
     this.pauseMenu = menu;
     }
 
-
-    public void menuPage() {
-
-    }
-
-    private int UPS = 300;
+    protected int UPS = 300;
     private int FPS = 0;
     private int ticks = 0;
     private int fps = 0;
@@ -154,7 +141,6 @@ class GamePanel extends JPanel implements Runnable {
         unlockMap.put(new Neve().getNome(), true);
         unlockMap.put(new Oleo().getNome(), true);
 
-        menuPage();
         loadTiles();
 
         for (int x = 0; x < col; x++) {
@@ -324,7 +310,6 @@ class GamePanel extends JPanel implements Runnable {
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
                 Pixel pixel = new Pixel(oldScreen[x][y].getType());
-                // int gravity = pixel.isGas() ? 0 : 1;
 
                 if (pixel.getName() == "Ar") {
                     continue;
@@ -395,21 +380,15 @@ class GamePanel extends JPanel implements Runnable {
                     newScreen[x][y] = new Pixel(tempPixel.getType());
 
                 } else {
-                    // newScreen[x][y] = new Pixel(pixel.getType());
-
-                    // switch (pixel.getName()) {
-                    // case "Areia":
 
                     int dir = gen.nextInt(3);
                     int end, inc;
                     if (dir != 0) {
                         inc = 1;
-                        // start = x - pixel.getFlow();
                         end = x + pixel.getFlow() + 1;
                     } else {
                         inc = -1;
                         end = x - pixel.getFlow() - 1;
-                        // start = x + pixel.getFlow();
                     }
 
                     boolean succes = false;
@@ -425,7 +404,6 @@ class GamePanel extends JPanel implements Runnable {
                                     break;
                                 }
                             } else {
-                                // newScreen[x][y] = new Pixel(pixel.getType());
                                 break;
                             }
 
@@ -437,12 +415,6 @@ class GamePanel extends JPanel implements Runnable {
                         continue;
                     }
                     newScreen[x][y] = new Pixel(pixel.getType());
-
-                    // break;
-                    // default:
-                    // newScreen[x][y] = new Pixel(pixel.getType());
-                    // break;
-                    // }
                 }
             }
         }
@@ -472,7 +444,7 @@ class GamePanel extends JPanel implements Runnable {
     int offsetX = (getWidth() - renderWidth) / 2;
     int offsetY = (getHeight() - renderHeight) / 2;
 
-    // fundo preto (barras laterais)
+    // Fundo preto (Barras laterais)
     g2.setColor(Color.BLACK);
     g2.fillRect(0, 0, getWidth(), getHeight());
 
