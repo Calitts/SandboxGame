@@ -37,6 +37,15 @@ class Main extends JFrame implements Runnable {
         // MOSTRA O MENU PRIMEIRO
         cardLayout.show(container, "MENU");
         panel.startGameThread();
+
+        panel.setPauseMenu(pauseMenu);
+
+        // IMPORTANTE
+        panel.setLayout(null);
+        panel.add(pauseMenu);
+        pauseMenu.setBounds(0, 0, 1280, 720);
+        pauseMenu.setVisible(false);
+
     }
 
     public static void main(String[] args) {

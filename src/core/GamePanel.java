@@ -1,9 +1,7 @@
 package core;
 
 import element.*;
-import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -57,6 +55,15 @@ class GamePanel extends JPanel implements Runnable {
     });
 
     }
+
+    public void resumeGame() {
+    paused = false;
+    if (pauseMenu != null) {
+        pauseMenu.setVisible(false);
+    }
+    requestFocusInWindow();
+    }
+
 
     public void startGameThread() {
         gameThread = new Thread(this);
@@ -189,7 +196,7 @@ class GamePanel extends JPanel implements Runnable {
         // g2.fillRect(0, 0, width, height);
 
         // Game Rendering
-     double scaleX = getWidth() / (double) BASE_WIDTH;
+    double scaleX = getWidth() / (double) BASE_WIDTH;
     double scaleY = getHeight() / (double) BASE_HEIGHT;
     double scaleFactor = Math.min(scaleX, scaleY);
 
@@ -232,11 +239,12 @@ class GamePanel extends JPanel implements Runnable {
     private void togglePauseMenu() {
     paused = !paused;
 
-        Container parent = getParent();
-        if (parent.getLayout() instanceof CardLayout) {
-            CardLayout cl = (CardLayout) parent.getLayout();
-            cl.show(parent, paused ? "PAUSE" : "GAME");
+    if (pauseMenu != null) {
+        pauseMenu.setVisible(paused);
+        pauseMenu.requestFocusInWindow();
+    
         }
+
     }
 
 }

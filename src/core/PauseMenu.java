@@ -58,6 +58,12 @@ public class PauseMenu extends JPanel {
         JButton exit = new JButton("Sair do Jogo");
         exit.addActionListener(e -> System.exit(0));
         add(exit, gbc);
+
+        gbc.gridy++;
+        JButton back = new JButton("Voltar ao Jogo");
+        back.addActionListener(e -> panel.resumeGame());
+        add(back, gbc);
+
         
     }
 }
