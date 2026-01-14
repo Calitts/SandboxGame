@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 
 import java.util.HashMap;
 import java.util.Random;
-import java.lang.Math;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
