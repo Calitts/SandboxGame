@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Gás leve
 public class Vapor extends Elemento {

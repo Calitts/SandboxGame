@@ -1,6 +1,8 @@
 package core;
 
-import element.*;
+import elementos.*;
+import elementos.liquido.*;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -36,12 +38,12 @@ class GamePanel extends JPanel implements Runnable {
     private final int BASE_HEIGHT = height + menuHeight;
     private PauseMenu pauseMenu;
 
-    Thread gameThread;
-    InputHandler input = new InputHandler();
+    protected Thread gameThread;
+    private final InputHandler input = new InputHandler();
 
-    Sound sound = new Sound();
+    private final Sound sound = new Sound();
 
-    GamePanel() {
+    public GamePanel() {
         this.setPreferredSize(new Dimension(width, height + menuHeight));
         // this.setSize(width, height + menuHeight);
         this.setBackground(new Color(0xAFA010));
@@ -61,7 +63,7 @@ class GamePanel extends JPanel implements Runnable {
         this.getActionMap().put("reset", new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                reset();
+                resetScreen();
             }
         });
 
@@ -87,7 +89,7 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public void setPauseMenu(PauseMenu menu) {
-        this.pauseMenu = menu;
+        pauseMenu = menu;
     }
 
     protected int UPS = 300;
@@ -97,10 +99,11 @@ class GamePanel extends JPanel implements Runnable {
     private int tps = 0;
     protected int penSize = 5;
     long nextStat = System.nanoTime();
-    Pixel[][] screen = new Pixel[col][row];
+    Screen screen = Screen.getEmptyScreen(col, row);
     Elemento currentType = new Ar();
     Pixel cursorPixel = new Pixel();
-    // Load images
+
+    //region Load images
     BufferedImage acido;
     BufferedImage agua;
     BufferedImage aguasalgada;
@@ -123,6 +126,7 @@ class GamePanel extends JPanel implements Runnable {
     BufferedImage vapor;
     BufferedImage vidro;
     BufferedImage background;
+    //endregion
 
     HashMap<String, Boolean> unlockMap = new HashMap<>();
 
@@ -134,27 +138,21 @@ class GamePanel extends JPanel implements Runnable {
         long lastTime = System.nanoTime();
         long currentTime;
 
-        unlockMap.put(new Ar().getNome(), true);
-        unlockMap.put(new Agua().getNome(), true);
-        unlockMap.put(new Pedra().getNome(), true);
-        unlockMap.put(new Areia().getNome(), true);
-        unlockMap.put(new Fogo().getNome(), true);
-        unlockMap.put(new Acido().getNome(), true);
-        unlockMap.put(new Alcool().getNome(), true);
-        unlockMap.put(new Eletricidade().getNome(), true);
-        unlockMap.put(new Madeira().getNome(), true);
-        unlockMap.put(new Lava().getNome(), true);
-        unlockMap.put(new Metal().getNome(), true);
-        unlockMap.put(new Neve().getNome(), true);
-        unlockMap.put(new Oleo().getNome(), true);
+        unlockMap.put(new Ar().getName(), true);
+        unlockMap.put(new Agua().getName(), true);
+        unlockMap.put(new Pedra().getName(), true);
+        unlockMap.put(new Areia().getName(), true);
+        unlockMap.put(new Fogo().getName(), true);
+        unlockMap.put(new Acido().getName(), true);
+        unlockMap.put(new Alcool().getName(), true);
+        unlockMap.put(new Eletricidade().getName(), true);
+        unlockMap.put(new Madeira().getName(), true);
+        unlockMap.put(new Lava().getName(), true);
+        unlockMap.put(new Metal().getName(), true);
+        unlockMap.put(new Neve().getName(), true);
+        unlockMap.put(new Oleo().getName(), true);
 
         loadTiles();
-
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                screen[x][y] = new Pixel();
-            }
-        }
 
         while (gameThread != null) {
             tileSize = originalTileSize * scale;
@@ -193,12 +191,8 @@ class GamePanel extends JPanel implements Runnable {
         handleChemistry();
     }
 
-    public void reset() {
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                screen[x][y] = new Pixel();
-            }
-        }
+    public void resetScreen() {
+        screen.clearScreen();
     }
 
     public void handleInput() {
@@ -247,56 +241,51 @@ class GamePanel extends JPanel implements Runnable {
 
                 // Coluna IV
             } else if (inRange(x, 508, 587) && inRange(y, 602, 627)) {
-                if (unlockMap.get(new Sal().getNome()) != null) {
+                if (unlockMap.get(new Sal().getName()) != null) {
                     currentType = new Sal();
                 }
             } else if (inRange(x, 508, 587) && inRange(y, 644, 666)) {
-                if (unlockMap.get(new Lama().getNome()) != null) {
+                if (unlockMap.get(new Lama().getName()) != null) {
                     currentType = new Lama();
                 }
             } else if (inRange(x, 508, 587) && inRange(y, 682, 709)) {
-                if (unlockMap.get(new Fumaca().getNome()) != null) {
+                if (unlockMap.get(new Fumaca().getName()) != null) {
                     currentType = new Fumaca();
                 }
             } else if (inRange(x, 508, 587) && inRange(y, 729, 748)) {
-                if (unlockMap.get(new Vapor().getNome()) != null) {
+                if (unlockMap.get(new Vapor().getName()) != null) {
                     currentType = new Vapor();
                 }
             } else if (inRange(x, 467, 634) && inRange(y, 764, 789)) {
-                if (unlockMap.get(new MetalDerretido().getNome()) != null) {
+                if (unlockMap.get(new MetalDerretido().getName()) != null) {
                     currentType = new MetalDerretido();
                 }
 
                 // Coluna V
             } else if (inRange(x, 621, 785) && inRange(y, 602, 627)) {
-                if (unlockMap.get(new AguaSalgada().getNome()) != null) {
+                if (unlockMap.get(new AguaSalgada().getName()) != null) {
                     currentType = new AguaSalgada();
                 }
             } else if (inRange(x, 647, 745) && inRange(y, 644, 666)) {
-                if (unlockMap.get(new Vidro().getNome()) != null) {
+                if (unlockMap.get(new Vidro().getName()) != null) {
                     currentType = new Vidro();
                 }
             } else if (inRange(x, 647, 745) && inRange(y, 682, 709)) {
-                if (unlockMap.get(new Cinzas().getNome()) != null) {
+                if (unlockMap.get(new Cinzas().getName()) != null) {
                     currentType = new Cinzas();
                 }
             }
             input.setType(currentType);
-
         }
 
         if (input.getReset()) {
-            for (int n = 0; n < col; n++) {
-                for (int m = 0; m < row; m++) {
-                    screen[n][m] = new Pixel();
-                }
-            }
+            resetScreen();
             input.setReset(false);
         }
 
         if (x >= 0 && x < width && y >= 0 && y < height) {
 
-            cursorPixel = screen[x / (tileSize)][y / (tileSize)];
+            cursorPixel = screen.getPixel(new Vector2D(x / (tileSize), y / (tileSize)));
             currentType = input.getType();
 
             if (input.isMousePressed()) {
@@ -304,7 +293,7 @@ class GamePanel extends JPanel implements Runnable {
                 for (int p_x = x - penSize; p_x < x + penSize; p_x++) {
                     for (int p_y = y - penSize; p_y < y + penSize; p_y++) {
                         if (p_x >= 0 && p_x < width && p_y >= 0 && p_y < height) {
-                            Pixel penPixel = screen[p_x / (tileSize)][p_y / (tileSize)];
+                            Pixel penPixel = screen.getPixel(new Vector2D(p_x / (tileSize), p_y / (tileSize)));
                             penPixel.setType(currentType);
                         }
                     }
@@ -317,93 +306,91 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public void handleChemistry() {
-        Pixel[][] oldScreen = new Pixel[col][row];
-        Pixel[][] newScreen = new Pixel[col][row];
+        Screen oldFrame = screen;
+        Screen newFrame = Screen.getEmptyScreen(col, row);
         GerenciadorReacoes gerenciador = new GerenciadorReacoes();
+        Vector2D position = new Vector2D();
 
         for (int x = 0; x < col; x++) {
+            position.setX(x);
             for (int y = 0; y < row; y++) {
-                oldScreen[x][y] = new Pixel(screen[x][y].getType());
-                newScreen[x][y] = new Pixel();
-            }
-        }
+                Pixel currentPixel = oldFrame.getPixel(x, y);
 
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                Pixel pixel = new Pixel(oldScreen[x][y].getType());
-
-                if (pixel.getName() == "Ar") {
-                    continue;
-                }
-
+                if (currentPixel.getType() instanceof Ar) continue;
                 boolean success = false;
-                for (int n = x - 1; n < x + 1; n++) {
-                    for (int m = y - 1; m < y + 1; m++) {
-                        try {
-                            Pixel nearPixel = oldScreen[n][m];
-                            if (gerenciador.combina(pixel.getType(), nearPixel.getType())) {
-                                Elemento[] par = gerenciador.processar(pixel.getType(), nearPixel.getType());
-                                newScreen[x][y] = new Pixel(par[0]);
-                                newScreen[n][m] = new Pixel(par[1]);
-                                success = true;
-                                for (int i = 0; i < 2; i++) {
-                                    if (unlockMap.get(par[i].getNome()) == null) {
-                                        unlockMap.put(par[i].getNome(), true);
-                                        playSE(1);
-                                    }
-                                }
-                            }
-                        } catch (IndexOutOfBoundsException e) {
-                            continue;
-                        }
-                    }
+                position.setY(y);
+
+                for (Pixel neighborPixel : oldFrame.getNeighborPixels(position)){
+                    Elemento[] resultado = gerenciador.tryReact(currentPixel.getType(), neighborPixel.getType());
+                    if (resultado[0] == null || resultado[1] == null) continue;
+                    success = true;
+
+                    newFrame.setPixel(new Pixel(resultado[0]), x, y);
+                    newFrame.setPixel(new Pixel(resultado[1]), neighborPixel.getPosition());
+                    break;
                 }
-                if (success) {
-                    continue;
-                }
-                newScreen[x][y] = oldScreen[x][y];
+
+//
+//                for (int n = x - 1; n < x + 1; n++) {
+//                    for (int m = y - 1; m < y + 1; m++) {
+//                        try {
+//                            Elemento nearElement = oldFrame.getPixel(n, m).getType();
+//                            Elemento[] resultado = gerenciador.tryReact(currentPixel.getType(), nearElement);
+//
+//                            if (resultado[0] == null || resultado[1] == null) continue;
+//
+//                            newFrame.setPixel(new Pixel(resultado[0]), x, y);
+//                            newFrame.setPixel(new Pixel(resultado[1]), n, m);
+//                            success = true;
+//
+//                            for (int i = 0; i < 2; i++) {
+//                                if (unlockMap.get(resultado[i].getName()) == null) {
+//                                    unlockMap.put(resultado[i].getName(), true);
+//                                    playSE(1);
+//                                }
+//                            }
+//                        } catch (IndexOutOfBoundsException ignored) {
+//                        }
+//                    }
+//                }
+                if (success) continue;
+
+                newFrame.setPixel(oldFrame.getPixel(position), position);
             }
         }
 
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                screen[x][y] = new Pixel(newScreen[x][y].getType());
-            }
-        }
+        screen = newFrame;
     }
 
     public void handlePhysics() {
-        Random gen = new Random();
-        Pixel[][] oldScreen = new Pixel[col][row];
-        Pixel[][] newScreen = new Pixel[col][row];
+        Random random = new Random();
+        Pixel[][] oldFrame = new Pixel[col][row];
+        Pixel[][] newFrame = new Pixel[col][row];
 
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                oldScreen[x][y] = new Pixel(screen[x][y].getType());
-                newScreen[x][y] = new Pixel();
+                oldFrame[x][y] = screen.getPixel(x, y);
+                newFrame[x][y] = new Pixel();
             }
         }
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                Pixel pixel = new Pixel(oldScreen[x][y].getType());
+                Pixel pixel = oldFrame[x][y];
                 int gravity = pixel.isGas() ? -1 : 1;
 
-                if (pixel.getName() == "Ar") {
+                if (pixel.getType() instanceof Ar) {
                     continue;
                 }
 
                 if (y + gravity >= row || y + gravity < 0) {
-                    newScreen[x][y] = new Pixel(pixel.getType());
-
-                } else if (pixel.getWeight() > oldScreen[x][y + gravity].getWeight()
-                        && !oldScreen[x][y + gravity].isSolid()) {
-                    Pixel tempPixel = oldScreen[x][y + gravity];
-                    newScreen[x][y + gravity] = new Pixel(pixel.getType());
-                    newScreen[x][y] = new Pixel(tempPixel.getType());
-
+                    newFrame[x][y] = pixel;
+                } else if (pixel.getWeight() > oldFrame[x][y + gravity].getWeight() && !oldFrame[x][y + gravity].isSolid()) {
+                    Pixel tempPixel = oldFrame[x][y + gravity];
+                    newFrame[x][y + gravity] = pixel;
+                    newFrame[x][y] = tempPixel;
                 } else {
 
-                    int dir = gen.nextInt(3);
+                    int dir = random.nextInt(3);
                     int end, inc;
                     if (dir != 0) {
                         inc = 1;
@@ -413,47 +400,40 @@ class GamePanel extends JPanel implements Runnable {
                         end = x - pixel.getFlow() - 1;
                     }
 
-                    boolean succes = false;
+                    boolean success = false;
 
                     for (int i = x + inc; i != end; i += inc) {
                         try {
-                            if (!oldScreen[i][y + 1].isSolid()) {
-                                if (pixel.getWeight() > oldScreen[i][y + 1].getWeight()) {
-                                    Pixel tempPixel = oldScreen[i][y + 1];
-                                    newScreen[i][y + 1] = new Pixel(pixel.getType());
-                                    newScreen[x][y] = new Pixel(tempPixel.getType());
-                                    succes = true;
+                            if (!oldFrame[i][y + 1].isSolid()) {
+                                if (pixel.getWeight() > oldFrame[i][y + 1].getWeight()) {
+                                    Pixel tempPixel = oldFrame[i][y + 1];
+                                    newFrame[i][y + 1] = pixel;
+                                    newFrame[x][y] = tempPixel;
+                                    success = true;
                                     break;
                                 }
                             } else {
                                 break;
                             }
-
                         } catch (IndexOutOfBoundsException e) {
                             break;
                         }
                     }
-                    if (succes) {
+                    if (success) {
                         continue;
                     }
-                    newScreen[x][y] = new Pixel(pixel.getType());
+                    newFrame[x][y] = pixel;
                 }
             }
         }
 
-        for (
-
-                int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                screen[x][y] = new Pixel(newScreen[x][y].getType());
-            }
-        }
+        screen.copyData(newFrame);
     }
 
     public void paintComponent(Graphics g) {
         FPS++;
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
+        Graphics2D g2D = (Graphics2D) g;
 
         // Game Rendering
         double scaleX = getWidth() / (double) BASE_WIDTH;
@@ -467,39 +447,39 @@ class GamePanel extends JPanel implements Runnable {
         int offsetY = (getHeight() - renderHeight) / 2;
 
         // Fundo preto (Barras laterais)
-        g2.setColor(Color.BLACK);
-        g2.fillRect(0, 0, getWidth(), getHeight());
+        g2D.setColor(Color.BLACK);
+        g2D.fillRect(0, 0, getWidth(), getHeight());
 
         // desenha o jogo centralizado
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                Pixel pixel = screen[x][y];
-                if (pixel.getName() == "Ar") {
-                    g2.setColor(pixel.getColor(50 * (y % 2)));
+                Pixel pixel = screen.getPixel(x, y);
+                if (pixel.getType() instanceof Ar) {
+                    g2D.setColor(pixel.getColor(50 * (y % 2)));
                 } else {
-                    g2.setColor(pixel.getColor(0));
+                    g2D.setColor(pixel.getColor(0));
                 }
 
                 int drawX = offsetX + (int) (x * tileSize * scaleFactor);
                 int drawY = offsetY + (int) (y * tileSize * scaleFactor);
                 int drawSize = (int) (tileSize * scaleFactor);
 
-                g2.fillRect(drawX, drawY, drawSize, drawSize);
+                g2D.fillRect(drawX, drawY, drawSize, drawSize);
             }
         }
 
-        renderTiles(g2);
+        renderTiles(g2D);
 
-        g2.setColor(new Color(currentType.getCor()));
-        g2.fillRect(width - 40, height + 10, 10, menuHeight - 20);
+        g2D.setColor(new Color(currentType.getCor()));
+        g2D.fillRect(width - 40, height + 10, 10, menuHeight - 20);
 
         // Information on Screen
-        g2.setColor(Color.WHITE);
-        g2.drawString(String.format("ELEMENTO: %s    POSIÇÃO: { %d, %d }", cursorPixel.getName(),
+        g2D.setColor(Color.WHITE);
+        g2D.drawString(String.format("ELEMENTO: %s    POSIÇÃO: { %d, %d }", cursorPixel.getName(),
                 input.getPosition().intX(), input.getPosition().intY()), 10, 15);
-        g2.drawString(String.format("FPS: %5d   TPS: %4d", fps, tps), width - 150, 15);
+        g2D.drawString(String.format("FPS: %5d   TPS: %4d", fps, tps), width - 150, 15);
 
-        g2.dispose();
+        g2D.dispose();
     }
 
     public void loadTiles() {
@@ -556,31 +536,30 @@ class GamePanel extends JPanel implements Runnable {
 
         // * Desbloqueáveis
 
-        if (unlockMap.get(new Sal().getNome()) != null) {
+        if (unlockMap.get(new Sal().getName()) != null) {
             g2.drawImage(sal, 490, height - 94, 180, 180, null);
         }
-        if (unlockMap.get(new Lama().getNome()) != null) {
+        if (unlockMap.get(new Lama().getName()) != null) {
             g2.drawImage(lama, 453, height - 16, 170, 170, null);
         }
-        if (unlockMap.get(new Fumaca().getNome()) != null) {
+        if (unlockMap.get(new Fumaca().getName()) != null) {
             g2.drawImage(fumaca, 460, height - 15, 180, 180, null);
         }
-        if (unlockMap.get(new Vapor().getNome()) != null) {
+        if (unlockMap.get(new Vapor().getName()) != null) {
             g2.drawImage(vapor, 470, height + 37, 160, 160, null);
         }
-        if (unlockMap.get(new MetalDerretido().getNome()) != null) {
+        if (unlockMap.get(new MetalDerretido().getName()) != null) {
             g2.drawImage(metalliquido, 460, height + 63, 180, 180, null);
         }
-        if (unlockMap.get(new AguaSalgada().getNome()) != null) {
+        if (unlockMap.get(new AguaSalgada().getName()) != null) {
             g2.drawImage(aguasalgada, 620, height - 80, 170, 170, null);
         }
-        if (unlockMap.get(new Vidro().getNome()) != null) {
+        if (unlockMap.get(new Vidro().getName()) != null) {
             g2.drawImage(vidro, 630, height - 50, 170, 170, null);
         }
-        if (unlockMap.get(new Cinzas().getNome()) != null) {
+        if (unlockMap.get(new Cinzas().getName()) != null) {
             g2.drawImage(cinzas, 630, height - 12, 170, 170, null);
         }
-
     }
 
     public void printStats() {
@@ -597,10 +576,7 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public boolean inRange(int cord, int lower, int upper) {
-        if (cord >= lower && cord < upper) {
-            return true;
-        }
-        return false;
+        return cord >= lower && cord < upper;
     }
 
     private void togglePauseMenu() {
@@ -610,13 +586,11 @@ class GamePanel extends JPanel implements Runnable {
         if (pauseMenu != null) {
             pauseMenu.setVisible(paused);
             pauseMenu.repaint();
-
         }
 
         if (!paused) {
             requestFocusInWindow();
         }
-
     }
 
     public void playMusic(int i) {
@@ -628,7 +602,6 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public void playSE(int i) {
-
         sound.play(i);
     }
 

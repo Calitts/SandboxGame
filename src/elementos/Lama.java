@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Mistura de água e areia
 public class Lama extends Elemento {

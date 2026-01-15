@@ -10,7 +10,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 
-import element.*;
+import elementos.*;
+import elementos.liquido.Agua;
 
 public class InputHandler implements MouseListener, MouseMotionListener, KeyListener {
 

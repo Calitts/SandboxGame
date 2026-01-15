@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Resultado sólido da queima
 public class Cinzas extends Elemento {

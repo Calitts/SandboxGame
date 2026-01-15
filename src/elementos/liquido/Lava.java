@@ -1,4 +1,6 @@
-package element;
+package elementos.liquido;
+
+import core.Elemento;
 
 // Rocha derretida
 public class Lava extends Elemento {

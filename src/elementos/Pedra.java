@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Sólido pesado e resistente
 public class Pedra extends Elemento {
