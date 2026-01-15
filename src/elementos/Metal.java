@@ -14,7 +14,7 @@ public class Metal extends Elemento implements IReagivel {
 
     @Override
     public boolean podeReagir(Elemento elemento) {
-        return elemento instanceof Lava || elemento instanceof Acido;
+        return elemento instanceof Lava || elemento instanceof Acido || elemento instanceof MetalDerretido;
     }
 
     @Override

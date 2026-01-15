@@ -14,7 +14,7 @@ public class GerenciadorReacoes {
          *
          * @param elemento1 primeiro elemento
          * @param elemento2 segundo elemento
-         * @return Resultado em um array com dois valores, array virá vazio caso não tenha consigo causar uma reação.
+         * @return Resultado em um array com dois valores, array virá vazio caso nenhuma reação seja possivel com o elemento especificificado.
          */
         public Elemento[] tryReact(Elemento elemento1, Elemento elemento2) {
                 if (elemento1 instanceof IReagivel reagivel && reagivel.podeReagir(elemento2)) {

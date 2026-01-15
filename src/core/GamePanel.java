@@ -63,7 +63,7 @@ class GamePanel extends JPanel implements Runnable {
         this.getActionMap().put("reset", new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                reset();
+                resetScreen();
             }
         });
 
@@ -99,7 +99,7 @@ class GamePanel extends JPanel implements Runnable {
     private int tps = 0;
     protected int penSize = 5;
     long nextStat = System.nanoTime();
-    Pixel[][] screen = new Pixel[col][row];
+    Screen screen = Screen.getEmptyScreen(col, row);
     Elemento currentType = new Ar();
     Pixel cursorPixel = new Pixel();
 
@@ -154,12 +154,6 @@ class GamePanel extends JPanel implements Runnable {
 
         loadTiles();
 
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                screen[x][y] = new Pixel();
-            }
-        }
-
         while (gameThread != null) {
             tileSize = originalTileSize * scale;
             col = 14 * (10 / originalTileSize);
@@ -197,12 +191,8 @@ class GamePanel extends JPanel implements Runnable {
         handleChemistry();
     }
 
-    public void reset() {
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                screen[x][y] = new Pixel();
-            }
-        }
+    public void resetScreen() {
+        screen.clearScreen();
     }
 
     public void handleInput() {
@@ -289,17 +279,13 @@ class GamePanel extends JPanel implements Runnable {
         }
 
         if (input.getReset()) {
-            for (int n = 0; n < col; n++) {
-                for (int m = 0; m < row; m++) {
-                    screen[n][m] = new Pixel();
-                }
-            }
+            resetScreen();
             input.setReset(false);
         }
 
         if (x >= 0 && x < width && y >= 0 && y < height) {
 
-            cursorPixel = screen[x / (tileSize)][y / (tileSize)];
+            cursorPixel = screen.getPixel(new Vector2D(x / (tileSize), y / (tileSize)));
             currentType = input.getType();
 
             if (input.isMousePressed()) {
@@ -307,7 +293,7 @@ class GamePanel extends JPanel implements Runnable {
                 for (int p_x = x - penSize; p_x < x + penSize; p_x++) {
                     for (int p_y = y - penSize; p_y < y + penSize; p_y++) {
                         if (p_x >= 0 && p_x < width && p_y >= 0 && p_y < height) {
-                            Pixel penPixel = screen[p_x / (tileSize)][p_y / (tileSize)];
+                            Pixel penPixel = screen.getPixel(new Vector2D(p_x / (tileSize), p_y / (tileSize)));
                             penPixel.setType(currentType);
                         }
                     }
@@ -320,52 +306,56 @@ class GamePanel extends JPanel implements Runnable {
     }
 
     public void handleChemistry() {
-        Pixel[][] oldFrame = new Pixel[col][row];
-        Pixel[][] newFrame = new Pixel[col][row];
+        Screen oldFrame = screen;
+        Screen newFrame = Screen.getEmptyScreen(col, row);
         GerenciadorReacoes gerenciador = new GerenciadorReacoes();
+        Vector2D position = new Vector2D();
 
         for (int x = 0; x < col; x++) {
+            position.setX(x);
             for (int y = 0; y < row; y++) {
-                oldFrame[x][y] = screen[x][y];
-                newFrame[x][y] = new Pixel();
-            }
-        }
+                Pixel currentPixel = oldFrame.getPixel(x, y);
 
-        for (int x = 0; x < col; x++) {
-            for (int y = 0; y < row; y++) {
-                Pixel pixel = oldFrame[x][y];
-
-                if (pixel.getType() instanceof Ar) {
-                    continue;
-                }
-
+                if (currentPixel.getType() instanceof Ar) continue;
                 boolean success = false;
+                position.setY(y);
 
-                for (int n = x - 1; n < x + 1; n++) {
-                    for (int m = y - 1; m < y + 1; m++) {
-                        try {
-                            Elemento nearElement = oldFrame[n][m].getType();
-                            Elemento[] resultado = gerenciador.tryReact(pixel.getType(), nearElement);
+                for (Pixel neighborPixel : oldFrame.getNeighborPixels(position)){
+                    Elemento[] resultado = gerenciador.tryReact(currentPixel.getType(), neighborPixel.getType());
+                    if (resultado[0] == null || resultado[1] == null) continue;
+                    success = true;
 
-                            if (resultado[0] == null || resultado[1] == null) continue;
-
-                            newFrame[x][y] = new Pixel(resultado[0]);
-                            newFrame[n][m] = new Pixel(resultado[1]);
-                            success = true;
-
-                            for (int i = 0; i < 2; i++) {
-                                if (unlockMap.get(resultado[i].getName()) == null) {
-                                    unlockMap.put(resultado[i].getName(), true);
-                                    playSE(1);
-                                }
-                            }
-                        } catch (IndexOutOfBoundsException ignored) {
-                        }
-                    }
+                    newFrame.setPixel(new Pixel(resultado[0]), x, y);
+                    newFrame.setPixel(new Pixel(resultado[1]), neighborPixel.getPosition());
+                    break;
                 }
+
+//
+//                for (int n = x - 1; n < x + 1; n++) {
+//                    for (int m = y - 1; m < y + 1; m++) {
+//                        try {
+//                            Elemento nearElement = oldFrame.getPixel(n, m).getType();
+//                            Elemento[] resultado = gerenciador.tryReact(currentPixel.getType(), nearElement);
+//
+//                            if (resultado[0] == null || resultado[1] == null) continue;
+//
+//                            newFrame.setPixel(new Pixel(resultado[0]), x, y);
+//                            newFrame.setPixel(new Pixel(resultado[1]), n, m);
+//                            success = true;
+//
+//                            for (int i = 0; i < 2; i++) {
+//                                if (unlockMap.get(resultado[i].getName()) == null) {
+//                                    unlockMap.put(resultado[i].getName(), true);
+//                                    playSE(1);
+//                                }
+//                            }
+//                        } catch (IndexOutOfBoundsException ignored) {
+//                        }
+//                    }
+//                }
                 if (success) continue;
 
-                newFrame[x][y] = oldFrame[x][y];
+                newFrame.setPixel(oldFrame.getPixel(position), position);
             }
         }
 
@@ -379,7 +369,7 @@ class GamePanel extends JPanel implements Runnable {
 
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                oldFrame[x][y] = screen[x][y];
+                oldFrame[x][y] = screen.getPixel(x, y);
                 newFrame[x][y] = new Pixel();
             }
         }
@@ -437,7 +427,7 @@ class GamePanel extends JPanel implements Runnable {
             }
         }
 
-        screen = newFrame;
+        screen.copyData(newFrame);
     }
 
     public void paintComponent(Graphics g) {
@@ -463,7 +453,7 @@ class GamePanel extends JPanel implements Runnable {
         // desenha o jogo centralizado
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
-                Pixel pixel = screen[x][y];
+                Pixel pixel = screen.getPixel(x, y);
                 if (pixel.getType() instanceof Ar) {
                     g2D.setColor(pixel.getColor(50 * (y % 2)));
                 } else {

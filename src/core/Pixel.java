@@ -8,7 +8,7 @@ import java.awt.Color;
 
 public class Pixel {
     private Elemento type;
-    private Vector2D position;
+    private final Vector2D position = new Vector2D();
 
     public Pixel() {
         this.type = new Ar();
@@ -55,5 +55,13 @@ public class Pixel {
 
     public void setType(Elemento elemento) {
         type = elemento;
+    }
+
+    public void setPosition(int x, int y){
+        position.setPosition(x, y);
+    }
+
+    public Vector2D getPosition(){
+        return position;
     }
 }

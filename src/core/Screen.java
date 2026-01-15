@@ -25,18 +25,49 @@ public class Screen {
         screenData = getEmptyScreen(col, row).screenData;
     }
 
+    @Deprecated
+    public void copyData(Pixel[][] data){
+        for (int x = 0; x < col; x++){
+            for (int y = 0; y < row; y++) {
+                screenData[x][y] = data[x][y];
+            }
+        }
+    }
+
     public void setPixel(Pixel pixel, Vector2D position){
         screenData[position.getX()][position.getY()] = pixel;
+    }
+
+    public void setPixel(Pixel pixel, int x, int y){
+        screenData[x][y] = pixel;
     }
 
     public Pixel getPixel(Vector2D position){
         return screenData[position.getX()][position.getY()];
     }
 
-    public Pixel getNeighbor(Vector2D position, int xOffset, int yOffset ){
-        if (position.getX() + xOffset < 0 && position.getX() + xOffset > col) return new Pixel();
-        if (position.getY() + yOffset < 0 && position.getX() + yOffset > row) return new Pixel();
+    public Pixel getPixel(int x, int y){
+        return screenData[x][y];
+    }
 
-        return screenData[position.getX() + xOffset][position.getY() + yOffset];
+    public Pixel getNeighbor(Vector2D position, int xOffset, int yOffset){
+        xOffset = position.getX() + xOffset;
+        yOffset = position.getY() + yOffset;
+
+        if (xOffset < 0 || xOffset > col-1) return new Pixel();
+        if (yOffset < 0 || yOffset > row-1) return new Pixel();
+
+        screenData[xOffset][yOffset].setPosition(xOffset, yOffset);
+        return screenData[xOffset][yOffset];
+    }
+
+    //Questione meus metodos, mas não os meus resultados
+    public Pixel[] getNeighborPixels(Vector2D position) {
+        return new Pixel[]{
+                getNeighbor(position, -1, 0),
+                getNeighbor(position, 1, 0),
+                getNeighbor(position, 0, -1),
+                getNeighbor(position, 0, 1)
+        };
     }
 }
