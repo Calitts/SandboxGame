@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Material formado da areia super-aquecida
 public class Vidro extends Elemento {

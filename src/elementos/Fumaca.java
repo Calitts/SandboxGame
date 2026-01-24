@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Resultado da combustão
 public class Fumaca extends Elemento {

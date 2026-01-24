@@ -11,9 +11,8 @@ public class PixelTitle extends JPanel {
     private final String text = "MIX BOX";
     private float angle = 0;
 
-    
-    private final int pixelScale = 11; 
-    private final int letterSpacing = 3; 
+    private final int pixelScale = 8;
+    private final int letterSpacing = 3;
 
     private final Color[] vibrantPalette = {
         new Color(255, 215, 0),   // Dourado
@@ -26,7 +25,7 @@ public class PixelTitle extends JPanel {
 
     public PixelTitle() {
         setOpaque(false);
-        setPreferredSize(new Dimension(900, 200)); // Ajuste de altura
+        setPreferredSize(new Dimension(900/2, 200/2)); // Ajuste de altura
         loadPixelFontData();
 
         Timer timer = new Timer(30, e -> {
@@ -40,9 +39,9 @@ public class PixelTitle extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
+        Graphics2D g2D = (Graphics2D) g;
 
-        drawBackgroundGlow(g2);
+        drawBackgroundGlow(g2D);
 
         int totalWidthPixels = 0;
         for (char c : text.toCharArray()) {
@@ -52,7 +51,7 @@ public class PixelTitle extends JPanel {
 
         int startX = (getWidth() - totalWidthPixels) / 2;
         int currentX = startX;
-        int baseY = 60;
+        int baseY = 20;
 
         char[] chars = text.toCharArray();
         for (int i = 0; i < chars.length; i++) {
@@ -77,14 +76,14 @@ public class PixelTitle extends JPanel {
                         int drawX = currentX + (col * pixelScale);
                         int drawY = currentY + (row * pixelScale);
 
-                        g2.setColor(Color.BLACK);
-                        g2.fillRect(drawX - 2, drawY - 2, pixelScale + 4, pixelScale + 4);
+                        g2D.setColor(Color.BLACK);
+                        g2D.fillRect(drawX - 2, drawY - 2, pixelScale + 4, pixelScale + 4);
                         
-                        g2.setColor(mainColor);
-                        g2.fillRect(drawX, drawY, pixelScale, pixelScale);
+                        g2D.setColor(mainColor);
+                        g2D.fillRect(drawX, drawY, pixelScale, pixelScale);
 
-                        g2.setColor(new Color(255, 255, 255, 180));
-                        g2.fillRect(drawX, drawY, pixelScale / 3, pixelScale / 3);
+                        g2D.setColor(new Color(255, 255, 255, 180));
+                        g2D.fillRect(drawX, drawY, pixelScale / 3, pixelScale / 3);
                     }
                 }
             }

@@ -1,12 +1,12 @@
 
-package element;
+package core;
 
 // LOGICA DE REAÇÕES
 
 public class Reacao {
 
-    public Class<? extends Elemento> a; // pega determinada classe que participe da reação
-    public Class<? extends Elemento> b;
+    public final Class<? extends Elemento> a; // pega determinada classe que participe da reação
+    public final Class<? extends Elemento> b;
     public Elemento resultadoA;
     public Elemento resultadoB;
 

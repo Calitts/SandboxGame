@@ -1,4 +1,6 @@
-package element;
+package elementos;
+
+import core.Elemento;
 
 // Gás sem cor
 public class Ar extends Elemento {
